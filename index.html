@@ -11,13 +11,520 @@
     <script defer src="./script.js"></script>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li>HOME</li>
-        <li>CREATE</li>
-        <li>GITHUB</li>
-      </ul>
-    </nav>
-    <main></main>
+    <div class="wrapper">
+      <nav class="nav">
+        <ul class="nav-list">
+          <li>
+            <a href="">HOME</a>
+          </li>
+          <li>
+            <a href="">CREATE</a>
+          </li>
+          <li>
+            <a href="">GITHUB</a>
+          </li>
+        </ul>
+      </nav>
+      <main class="main">
+        <section id="home" class="home">
+          <div class="top">
+            <div class="main-text">
+              <h1>
+                CUSTOM INPUT RADIO <br />
+                AND CHECKBOX <br />
+                GENERATOR
+              </h1>
+              <p>
+                Make custom input radio and <br />
+                checkbox with HTML and CSS only
+              </p>
+            </div>
+            <div class="img">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="354.575"
+                height="387.141"
+                viewBox="0 0 354.575 387.141"
+              >
+                <defs>
+                  <style>
+                    .a,
+                    .c,
+                    .e {
+                      fill: #f8f8f8;
+                    }
+                    .b,
+                    .g {
+                      fill: #313131;
+                    }
+                    .d {
+                      fill: #ca3e47;
+                    }
+                    .e {
+                      stroke: #414141;
+                    }
+                    .f,
+                    .g {
+                      stroke: none;
+                    }
+                    .h {
+                      fill: none;
+                    }
+                  </style>
+                </defs>
+                <g transform="translate(-1141 -220.621)">
+                  <g
+                    class="a"
+                    transform="translate(1189.392 241.377) rotate(9)"
+                  >
+                    <path
+                      class="f"
+                      d="M 152.4998321533203 306.8280944824219 C 142.8993377685547 306.6926879882813 133.3233795166016 305.6595764160156 124.0007400512695 303.7518920898438 C 114.2313232421875 301.7527160644531 104.6221160888672 298.7698364257813 95.44011688232422 294.8861083984375 C 86.42349243164063 291.072265625 77.72720336914063 286.3519592285156 69.59278106689453 280.8563537597656 C 61.5345344543457 275.4123840332031 53.95674133300781 269.1601257324219 47.06986618041992 262.2733154296875 C 40.18336868286133 255.3866729736328 33.93115997314453 247.8088836669922 28.48690795898438 239.7504730224609 C 22.99090766906738 231.6152191162109 18.27074241638184 222.9188385009766 14.45749187469482 213.9029693603516 C 10.57357501983643 204.7205047607422 7.590700149536133 195.1112976074219 5.591700077056885 185.3422241210938 C 3.540199995040894 175.317138671875 2.499991893768311 164.9980926513672 2.499991893768311 154.6717224121094 C 2.499991893768311 144.3453063964844 3.540199995040894 134.0262145996094 5.591700077056885 124.0011367797852 C 7.590700149536133 114.2319259643555 10.57357501983643 104.6226806640625 14.4574499130249 95.44038391113281 C 18.27061653137207 86.42455291748047 22.99082565307617 77.72817993164063 28.4869499206543 69.59272003173828 C 33.93082427978516 61.53472137451172 40.18303298950195 53.95697021484375 47.06990814208984 47.07001113891602 C 53.95657348632813 40.18326187133789 61.53432464599609 33.93105316162109 69.59274291992188 28.48709487915039 C 77.72732543945313 22.9913444519043 86.42361450195313 18.27109527587891 95.44007873535156 14.4573860168457 C 104.6222839355469 10.57359409332275 114.2314910888672 7.590719699859619 124.0007858276367 5.591636180877686 C 133.3235778808594 3.68392014503479 142.8995056152344 2.650755882263184 152.4998321533203 2.51533579826355 L 152.4998321533203 306.8280944824219 Z"
+                    />
+                    <path
+                      class="g"
+                      d="M 149.9998168945313 304.2713623046875 L 149.9998168945313 5.072091579437256 C 141.40673828125 5.33714771270752 132.8507232666016 6.332482814788818 124.501953125 8.040889739990234 C 114.8942718505859 10.00693511962891 105.4441375732422 12.9404354095459 96.41395568847656 16.75984382629395 C 87.54604339599609 20.5107536315918 78.99299621582031 25.15329933166504 70.99217987060547 30.55870819091797 C 63.06577301025391 35.91348266601563 55.61190795898438 42.06343460083008 48.8376350402832 48.83775329589844 C 42.06336212158203 55.61211776733398 35.91336441040039 63.06597900390625 30.55850028991699 70.99230194091797 C 25.15277290344238 78.99384307861328 20.51027297973633 87.54698181152344 16.75995445251465 96.41425323486328 C 12.94040870666504 105.4444808959961 10.00690841674805 114.894660949707 8.040953636169434 124.5023422241211 C 6.023135662078857 134.3627471923828 4.999999523162842 144.5131683349609 4.999999523162842 154.6717071533203 C 4.999999523162842 164.8302154541016 6.023135662078857 174.9805755615234 8.040953636169434 184.8410186767578 C 10.00686264038086 194.448486328125 12.94036293029785 203.8986663818359 16.76000022888184 212.9290771484375 C 20.51040840148926 221.7962951660156 25.15290832519531 230.3494873046875 30.5584545135498 238.3509826660156 C 35.91354370117188 246.2774353027344 42.06359100341797 253.7312927246094 48.83758926391602 260.5055236816406 C 55.61186218261719 267.2797546386719 63.06577301025391 273.4297485351563 70.99231719970703 278.7847900390625 C 78.99308776855469 284.1901245117188 87.54618072509766 288.8327026367188 96.41395568847656 292.5836181640625 C 105.4441375732422 296.403076171875 114.8943176269531 299.3365783691406 124.5019073486328 301.3026123046875 C 132.8507080078125 303.010986328125 141.40673828125 304.0063171386719 149.9998168945313 304.2713623046875 M 154.9998168945313 309.3437194824219 L 154.9991302490234 309.3437194824219 C 154.9362335205078 309.3434753417969 154.8728637695313 309.3434448242188 154.8094940185547 309.3434448242188 L 154.6710968017578 309.3434448242188 C 144.1769561767578 309.3434448242188 133.6893157958984 308.2861938476563 123.4995422363281 306.2011108398438 C 113.5686798095703 304.1689453125 103.8003158569336 301.1366577148438 94.46617889404297 297.1886291503906 C 85.30140686035156 293.3121032714844 76.46176910400391 288.5141296386719 68.19322967529297 282.9278869628906 C 60.00286483764648 277.3946228027344 52.30127334594727 271.0402221679688 45.30208969116211 264.0410766601563 C 38.30304336547852 257.0418395996094 31.94863510131836 249.3402099609375 26.41536331176758 241.1500244140625 C 20.82922744750977 232.8812561035156 16.03127288818359 224.0417022705078 12.154953956604 214.8768005371094 C 8.206863403320313 205.5426177978516 5.174590110778809 195.7743835449219 3.142453908920288 185.8433837890625 C 1.057226657867432 175.6536102294922 -6.436434887291398e-07 165.1659393310547 -6.436434887291398e-07 154.6717071533203 C -6.436434887291398e-07 144.1774291992188 1.057226657867432 133.6897125244141 3.142453908920288 123.4999389648438 C 5.174590110778809 113.5688018798828 8.206863403320313 103.8005294799805 12.154953956604 94.46643829345703 C 16.03113555908203 85.30162048339844 20.8290901184082 76.46207427978516 26.41536331176758 68.19325256347656 C 31.94840812683105 60.00325393676758 38.30281829833984 52.30161666870117 45.30208969116211 45.30225372314453 C 52.30136489868164 38.30293655395508 60.00308990478516 31.9484806060791 68.19322967529297 26.41552543640137 C 76.46176910400391 20.82925415039063 85.30140686035156 16.03129959106445 94.46617889404297 12.15484428405762 C 103.8003158569336 8.206844329833984 113.5685424804688 5.174617290496826 123.4995422363281 3.142390012741089 C 133.6894073486328 1.05725359916687 144.1770477294922 2.630060407682322e-05 154.6710968017578 2.630060407682322e-05 C 154.7805938720703 2.630060407682322e-05 154.8903198242188 0.0002081187849398702 154.9998168945313 0.0004353914991952479 L 154.9998168945313 309.3430786132813 L 154.9998168945313 309.3437194824219 Z"
+                    />
+                  </g>
+                  <path
+                    class="b"
+                    d="M155,0h-.329A155.814,155.814,0,0,0,123.5,3.143,153.819,153.819,0,0,0,68.193,26.416,155.122,155.122,0,0,0,12.155,94.467,153.894,153.894,0,0,0,3.142,123.5a156.179,156.179,0,0,0,0,62.343A153.828,153.828,0,0,0,26.415,241.15a155.125,155.125,0,0,0,68.051,56.038A153.9,153.9,0,0,0,123.5,306.2a155.813,155.813,0,0,0,31.172,3.142H155V0Z"
+                    transform="translate(1447.183 595.407) rotate(-171)"
+                  />
+                  <path
+                    class="b"
+                    d="M122.161,244.322h0a123.064,123.064,0,0,1-24.62-2.482A121.488,121.488,0,0,1,53.86,223.459,122.517,122.517,0,0,1,9.6,169.711a121.557,121.557,0,0,1-7.118-22.931,123.351,123.351,0,0,1,0-49.239A121.489,121.489,0,0,1,20.863,53.86,122.521,122.521,0,0,1,74.61,9.6,121.548,121.548,0,0,1,97.541,2.482,123.064,123.064,0,0,1,122.161,0V244.322Z"
+                    transform="translate(1216.484 280.247) rotate(9)"
+                  />
+                  <path
+                    class="c"
+                    d="M77.5,0h0A78.073,78.073,0,0,0,61.881,1.575,77.074,77.074,0,0,0,34.169,13.236,77.727,77.727,0,0,0,6.09,47.334,77.113,77.113,0,0,0,1.575,61.881a78.253,78.253,0,0,0,0,31.238,77.072,77.072,0,0,0,11.661,27.712,77.727,77.727,0,0,0,34.1,28.079,77.11,77.11,0,0,0,14.547,4.516A78.075,78.075,0,0,0,77.5,155V0Z"
+                    transform="translate(1382.761 506.737) rotate(-171)"
+                  />
+                  <rect
+                    class="d"
+                    width="6.568"
+                    height="373.051"
+                    transform="translate(1342.945 229.125) rotate(9)"
+                  />
+                  <g
+                    class="e"
+                    transform="translate(1339.637 220.621) rotate(9)"
+                  >
+                    <rect class="f" width="15.763" height="16.419" />
+                    <rect
+                      class="h"
+                      x="0.5"
+                      y="0.5"
+                      width="14.763"
+                      height="15.419"
+                    />
+                  </g>
+                  <g
+                    class="e"
+                    transform="translate(1312.513 391.876) rotate(9)"
+                  >
+                    <rect class="f" width="15.763" height="16.419" />
+                    <rect
+                      class="h"
+                      x="0.5"
+                      y="0.5"
+                      width="14.763"
+                      height="15.419"
+                    />
+                  </g>
+                  <g
+                    class="e"
+                    transform="translate(1281.279 589.079) rotate(9)"
+                  >
+                    <rect class="f" width="15.763" height="16.419" />
+                    <rect
+                      class="h"
+                      x="0.5"
+                      y="0.5"
+                      width="14.763"
+                      height="15.419"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <a href="#style-section" class="icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="77.5"
+              height="77.5"
+              viewBox="0 0 77.5 77.5"
+            >
+              <defs>
+                <style></style>
+              </defs>
+              <g transform="translate(-921.25 -786.25)">
+                <circle
+                  class="a"
+                  style="fill: #414141"
+                  cx="38.75"
+                  cy="38.75"
+                  r="38.75"
+                  transform="translate(921.25 786.25)"
+                />
+                <g transform="translate(947.763 809.194)">
+                  <path
+                    class="b"
+                    style="fill: none; stroke: #f8f8f8; stroke-width: 5px"
+                    d="M-467,360l12.244,12.244L-442.513,360"
+                    transform="translate(467 -340.37)"
+                  />
+                  <line
+                    class="b"
+                    y2="31.612"
+                    style="fill: none; stroke: #f8f8f8; stroke-width: 5px"
+                    transform="translate(12.237 0)"
+                  />
+                </g>
+              </g>
+            </svg>
+          </a>
+        </section>
+
+        <section class="style-section" id="style-section">
+          <div class="main-text">
+            <h1>CHOOSE YOUR STYLE</h1>
+            <p>
+              Don't worry, you still <br />
+              can customize it later
+            </p>
+          </div>
+
+          <div class="radio-option">
+            <h3 class="title">1. Radios</h3>
+            <div class="card-container">
+              <div class="card">
+                <div class="input-section">
+                  <label class="radio-container">
+                    Option 1
+                    <input type="radio" name="radio1" checked />
+                    <span class="fake-radio"></span>
+                  </label>
+                  <label class="radio-container">
+                    Option 2
+                    <input type="radio" name="radio1" />
+                    <span class="fake-radio"></span>
+                  </label>
+                </div>
+                <div class="text-section">
+                  <h4>CLASSIC</h4>
+                  <p>
+                    With border, transparent background, and big circle in the
+                    middle.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="input-section">
+                  <label class="radio-container radio2">
+                    Option 1
+                    <input type="radio" name="radio2" checked />
+                    <span class="fake-radio"></span>
+                  </label>
+                  <label class="radio-container radio2">
+                    Option 2
+                    <input type="radio" name="radio2" />
+                    <span class="fake-radio"></span>
+                  </label>
+                </div>
+                <div class="text-section">
+                  <h4>BOLD</h4>
+                  <p>
+                    Without border, colored background, and little circle in the
+                    middle.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="input-section">
+                  <label class="radio-container radio3">
+                    Option 1
+                    <input type="radio" name="radio3" checked />
+                    <span class="fake-radio"></span>
+                  </label>
+                  <label class="radio-container radio3">
+                    Option 2
+                    <input type="radio" name="radio3" />
+                    <span class="fake-radio"></span>
+                  </label>
+                </div>
+                <div class="text-section">
+                  <h4>SIMPLE</h4>
+                  <p>Simple with colored background and unique style.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="radio-option">
+            <h3 class="title">2. Checkboxes</h3>
+            <div class="card-container">
+              <div class="card">
+                <div class="input-section">
+                  <label class="checkbox-container">
+                    Option 1
+                    <input type="checkbox" name="checkbox1" checked />
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="checkbox-container">
+                    Option 2
+                    <input type="checkbox" name="checkbox1" />
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="text-section">
+                  <h4>CLASSIC</h4>
+                  <p>
+                    With border, transparent background, and big circle in the
+                    middle.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="input-section">
+                  <label class="checkbox-container checkbox2">
+                    Option 1
+                    <input type="checkbox" name="checkbox2" checked />
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="checkbox-container checkbox2">
+                    Option 2
+                    <input type="checkbox" name="checkbox2" />
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="text-section">
+                  <h4>CIRCLE</h4>
+                  <p>
+                    Without border, colored background, and little circle in the
+                    middle.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="input-section">
+                  <label class="checkbox-container checkbox3">
+                    Option 1
+                    <input type="checkbox" name="radio3" checked />
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="checkbox-container checkbox3">
+                    Option 2
+                    <input type="checkbox" name="checkbox3" />
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="text-section">
+                  <h4>SIMPLE</h4>
+                  <p>Simple with colored background and unique style.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="customize-section">
+          <div class="main-text">
+            <h1>CUSTOMIZE YOUR INPUT</h1>
+          </div>
+          <div class="result-section">
+            <div class="result-container">
+              <div class="card">
+                <div class="input-section">
+                  <label class="radio-container">
+                    Option 1
+                    <input type="radio" name="radioRes" checked />
+                    <span class="fake-radio"></span>
+                  </label>
+                  <label class="radio-container">
+                    Option 2
+                    <input type="radio" name="radioRes" />
+                    <span class="fake-radio"></span>
+                  </label>
+                  <label class="radio-container">
+                    Option 3 (disabled)
+                    <input type="radio" name="radioRes2" checked disabled />
+                    <span class="fake-radio"></span>
+                  </label>
+                  <label class="radio-container">
+                    Option 4 (disabled)
+                    <input type="radio" name="radioRes2" disabled />
+                    <span class="fake-radio"></span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="to-code-action">
+                <p>Code</p>
+
+                <a href="#code-section" class="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="77.5"
+                    height="77.5"
+                    viewBox="0 0 77.5 77.5"
+                  >
+                    <defs>
+                      <style></style>
+                    </defs>
+                    <g transform="translate(-921.25 -786.25)">
+                      <circle
+                        class="a"
+                        style="fill: #414141"
+                        cx="38.75"
+                        cy="38.75"
+                        r="38.75"
+                        transform="translate(921.25 786.25)"
+                      />
+                      <g transform="translate(947.763 809.194)">
+                        <path
+                          class="b"
+                          style="fill: none; stroke: #f8f8f8; stroke-width: 5px"
+                          d="M-467,360l12.244,12.244L-442.513,360"
+                          transform="translate(467 -340.37)"
+                        />
+                        <line
+                          class="b"
+                          y2="31.612"
+                          style="fill: none; stroke: #f8f8f8; stroke-width: 5px"
+                          transform="translate(12.237 0)"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="editor">
+              <ul>
+                <li class="show">
+                  <div class="edit-title">
+                    <h2>COLOR</h2>
+                    <span class="arrow"></span>
+                  </div>
+                  <div class="edit-tab">
+                    <div class="input-tab">
+                      <input type="color" />
+                      <input type="text" />
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="edit-title">
+                    <h2>BACKGROUND</h2>
+                    <span class="arrow"></span>
+                  </div>
+                  <div class="edit-tab">
+                    <label class="checkbox-container">
+                      Background ?
+                      <input type="checkbox" name="background" checked />
+                      <span class="checkmark"></span>
+                    </label>
+                    <div class="input-tab">
+                      <input type="color" />
+                      <input type="text" />
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="edit-title">
+                    <h2>BACKGROUND</h2>
+                    <span class="arrow"></span>
+                  </div>
+                  <div class="edit-tab">
+                    <label class="checkbox-container">
+                      Border ?
+                      <input type="checkbox" name="border" checked />
+                      <span class="checkmark"></span>
+                    </label>
+                    <div class="input-tab">
+                      <input type="color" />
+                      <input type="text" />
+                    </div>
+                    <div class="thick-input input">
+                      <p>Thickness</p>
+                      <div class="input-size">
+                        <input type="text" class="input-size" />
+                        <span>px</span>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="edit-title">
+                    <h2>DISABLED VERSION</h2>
+                    <span class="arrow"></span>
+                  </div>
+                  <div class="edit-tab">
+                    <div class="input-tab">
+                      <input type="color" />
+                      <input type="text" />
+                    </div>
+                    <div class="range-input">
+                      <input type="range" min="0" max="10" class="slider" />
+                      <p><span class="number">0</span>%</p>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="edit-title">
+                    <h2>TEXT</h2>
+                    <span class="arrow"></span>
+                  </div>
+                  <div class="edit-tab">
+                    <div class="input-tab">
+                      <input type="color" />
+                      <input type="text" />
+                    </div>
+                    <div class="thick-input input">
+                      <p>font size</p>
+                      <div class="input-size">
+                        <input type="text" class="input-size" />
+                        <span>px</span>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="code-section" id="code-section">
+          <div class="html-section">
+            <div class="title">
+              <h2>HTML</h2>
+              <button>COPY</button>
+            </div>
+            <div class="code">
+              <textarea name="" id="" cols="30" rows="10" disabled></textarea>
+            </div>
+          </div>
+
+          <div class="css-section">
+            <div class="title">
+              <h2>CSS</h2>
+              <button>COPY</button>
+            </div>
+            <div class="code">
+              <textarea name="" id="" cols="30" rows="15" disabled></textarea>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
