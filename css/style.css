@@ -5,6 +5,11 @@
   --red: #ca3e47;
   --gray: #a2a2a2;
   --white: #f8f8f8;
+  --result-color: #f8f8f8;
+  --result-border: 1px solid #f8f8f8;
+  --result-background: transparent;
+  --result-disabled-color: #a2a2a2;
+  --result-disabled-opacity: 0.7;
 }
 
 .custom-input-base .radio-container, .card-base .radio-container, .main .style-section .radio-option .card-container .card .radio-container, .main .customize-section .result-section .result-container .card .radio-container, .main .customize-section .editor ul li .edit-tab .radio-container,
@@ -383,6 +388,26 @@ body {
 .main .customize-section .result-section .result-container .card .checkbox-container .fake-radio,
 .main .customize-section .result-section .result-container .card .checkbox-container .checkmark {
   width: 30px;
+  background-color: var(--result-background);
+  border: var(--result-border);
+}
+
+.main .customize-section .result-section .result-container .card .radio-container .fake-radio::before,
+.main .customize-section .result-section .result-container .card .radio-container .checkmark::before,
+.main .customize-section .result-section .result-container .card .checkbox-container .fake-radio::before,
+.main .customize-section .result-section .result-container .card .checkbox-container .checkmark::before {
+  background-color: var(--result-color);
+}
+
+.main .customize-section .result-section .result-container .card .radio-container input:disabled ~ .fake-radio,
+.main .customize-section .result-section .result-container .card .checkbox-container input:disabled ~ .fake-radio {
+  opacity: var(--result-disabled-opacity);
+  background-color: var(--result-background);
+}
+
+.main .customize-section .result-section .result-container .card .radio-container input:disabled ~ .fake-radio::before,
+.main .customize-section .result-section .result-container .card .checkbox-container input:disabled ~ .fake-radio::before {
+  background-color: var(--result-disabled-color);
 }
 
 .main .customize-section .result-section .result-container .to-code-action {
@@ -494,7 +519,7 @@ body {
 .main .customize-section .editor ul li .edit-tab .input-tab input[type="text"] {
   padding: 0 1rem;
   color: var(--white);
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 2px;
   border: none;
@@ -540,7 +565,7 @@ body {
 }
 
 .main .customize-section .editor ul li .edit-tab .input .input-size {
-  max-width: 50px;
+  max-width: 80px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -551,7 +576,6 @@ body {
   border: none;
   color: var(--white);
   font-weight: 600;
-  padding: 0 0.5rem;
   text-align: center;
 }
 

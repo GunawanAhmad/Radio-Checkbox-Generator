@@ -5,6 +5,12 @@
   --red: #ca3e47;
   --gray: #a2a2a2;
   --white: #f8f8f8;
+
+  --result-color: #f8f8f8;
+  --result-border: 1px solid #f8f8f8;
+  --result-background: transparent;
+  --result-disabled-color: #a2a2a2;
+  --result-disabled-opacity: 0.7;
 }
 
 .custom-input-base {
@@ -339,6 +345,21 @@ body {
             .fake-radio,
             .checkmark {
               width: 30px;
+              background-color: var(--result-background);
+              border: var(--result-border);
+
+              &::before {
+                background-color: var(--result-color);
+              }
+            }
+
+            input:disabled ~ .fake-radio {
+              opacity: var(--result-disabled-opacity);
+              background-color: var(--result-background);
+            }
+
+            input:disabled ~ .fake-radio::before {
+              background-color: var(--result-disabled-color);
             }
           }
         }
@@ -464,7 +485,7 @@ body {
               input[type="text"] {
                 padding: 0 1rem;
                 color: var(--white);
-                font-size: 1.5rem;
+                font-size: 1rem;
                 font-weight: 600;
                 letter-spacing: 2px;
                 border: none;
@@ -514,7 +535,7 @@ body {
               }
 
               .input-size {
-                max-width: 50px;
+                max-width: 80px;
                 width: 100%;
                 display: flex;
                 align-items: center;
@@ -524,7 +545,7 @@ body {
                   border: none;
                   color: var(--white);
                   font-weight: 600;
-                  padding: 0 0.5rem;
+                  // padding: 0 0.5rem;
                   text-align: center;
                 }
 
