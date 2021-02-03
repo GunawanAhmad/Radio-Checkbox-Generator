@@ -1,4 +1,5 @@
 let settingsTab = document.querySelectorAll(".editor ul li .edit-title");
+let cards = document.querySelectorAll(".card");
 
 settingsTab.forEach((tab, index) => {
   tab.addEventListener("click", () => {
@@ -92,6 +93,7 @@ let baseColorInputHex = document.querySelector('.base-color input[type="text"');
 
 //border color var
 let borderColor = "#f8f8f8";
+let useBorder = true;
 let borderThickness = 1;
 let border = `${borderThickness}px solid ${borderColor}`;
 let borderColorInput = document.querySelector(
@@ -110,19 +112,65 @@ let borderThickInput = document.querySelector(
   '.border-color input[type="number"]'
 );
 
+borderThickInput.value = borderThickness;
+
 //background color var
 let backgroundColor = "transparent";
 let backgroundColorInput = document.querySelector(
   '.background-color input[type="color"]'
 );
+backgroundColorInput.value = "#ca3e47";
 let backgroundColorInputHex = document.querySelector(
   '.background-color input[type="text"]'
 );
+backgroundColorInputHex.value = backgroundColorInput.value;
 let isUseBackground = document.querySelector(
   '.background-color input[type="checkbox"]'
 );
 
-//
+let useBackground = false;
+
+//click the card
+let currSelect = 0;
+cards.forEach((card, index) => {
+  card.addEventListener("click", () => {
+    cards[currSelect].classList.remove("selected");
+    card.classList.toggle("selected");
+    currSelect = index;
+    checkCard(card);
+  });
+});
+
+function checkCard(elm) {
+  let cls = elm.classList;
+  switch (true) {
+    case cls.contains("radio1"):
+      useBackground = false;
+      useBorder = true;
+      isUseBackground.checked = false;
+      isUseBorder.checked = true;
+      changebackground(backgroundColorInput.value);
+      changeBorder(baseColor, borderThickness);
+      break;
+    case cls.contains("radio2"):
+      useBackground = true;
+      changebackground(backgroundColorInput.value);
+      useBorder = false;
+      changeRootVal("--result-border", "none");
+      break;
+    case cls.contains("radio3"):
+      console.log("radio3");
+      break;
+    case cls.contains("checkbox1"):
+      break;
+    case cls.contains("checkbox2"):
+      break;
+    case cls.contains("checkbox3"):
+      break;
+    default:
+      break;
+  }
+}
 
 //base color
 baseColorInput.value = baseColor;
@@ -147,24 +195,36 @@ baseColorInputHex.addEventListener("change", () => {
 isUseBackground.addEventListener("click", () => {
   if (isUseBackground.checked) {
     backgroundColor = backgroundColorInput.value;
+    useBackground = true;
     changeRootVal("--result-background", backgroundColor);
   } else {
     backgroundColor = "transparent";
+    useBackground = false;
     changeRootVal("--result-background", backgroundColor);
   }
 });
 
 backgroundColorInput.addEventListener("change", () => {
-  backgroundColor = backgroundColorInput.value;
-  backgroundColorInputHex.value = backgroundColorInput.value;
-  changeRootVal("--result-backround", backgroundColorInput.value);
+  changebackground(backgroundColorInput.value);
 });
 
 backgroundColorInputHex.addEventListener("change", () => {
-  backgroundColor = backgroundColorInputHex.value;
-  backgroundColorInput.value = backgroundColorInputHex.value;
-  changeRootVal("--result-backround", backgroundColorInputHex.value);
+  changebackground(backgroundColorInputHex.value);
 });
+
+function changebackground(val) {
+  if (useBackground) {
+    backgroundColor = val;
+    backgroundColorInput.value = val;
+    backgroundColorInputHex.value = val;
+    changeRootVal("--result-background", val);
+  } else {
+    backgroundColor = val;
+    backgroundColorInput.value = val;
+    backgroundColorInputHex.value = val;
+    changeRootVal("--result-background", "transparent");
+  }
+}
 
 //border
 borderThickInput.addEventListener("change", () => {
