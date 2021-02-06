@@ -10,7 +10,8 @@
   --result-border: 1px solid #f8f8f8;
   --result-background: transparent;
   --result-disabled-color: #a2a2a2;
-  --result-disabled-opacity: 0.7;
+  --result-disabled-opacity: 0.5;
+  --result-radio-size: 70%;
 }
 
 .custom-input-base {
@@ -68,7 +69,6 @@
     }
 
     input:disabled ~ .fake-radio {
-      border: 1px solid grey;
       opacity: 0.7;
     }
 
@@ -357,6 +357,9 @@ body {
 
               &::before {
                 background-color: var(--result-color);
+                height: var(--result-radio-size) !important;
+                width: var(--result-radio-size) !important;
+                // display: none;
               }
             }
 

@@ -9,7 +9,8 @@
   --result-border: 1px solid #f8f8f8;
   --result-background: transparent;
   --result-disabled-color: #a2a2a2;
-  --result-disabled-opacity: 0.7;
+  --result-disabled-opacity: 0.5;
+  --result-radio-size: 70%;
 }
 
 .custom-input-base .radio-container, .card-base .radio-container, .main .style-section .radio-option .card-container .card .radio-container, .main .customize-section .result-section .result-container .result-card .radio-container, .main .customize-section .editor ul li .edit-tab .radio-container,
@@ -110,7 +111,6 @@
 .main .style-section .radio-option .card-container .card .checkbox-container input:disabled ~ .fake-radio,
 .main .customize-section .result-section .result-container .result-card .checkbox-container input:disabled ~ .fake-radio,
 .main .customize-section .editor ul li .edit-tab .checkbox-container input:disabled ~ .fake-radio {
-  border: 1px solid grey;
   opacity: 0.7;
 }
 
@@ -411,6 +411,8 @@ body {
 .main .customize-section .result-section .result-container .result-card .checkbox-container .fake-radio::before,
 .main .customize-section .result-section .result-container .result-card .checkbox-container .checkmark::before {
   background-color: var(--result-color);
+  height: var(--result-radio-size) !important;
+  width: var(--result-radio-size) !important;
 }
 
 .main .customize-section .result-section .result-container .result-card .radio-container input:disabled ~ .fake-radio,

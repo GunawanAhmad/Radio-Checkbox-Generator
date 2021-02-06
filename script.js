@@ -1,5 +1,12 @@
 let settingsTab = document.querySelectorAll(".editor ul li .edit-title");
 let cards = document.querySelectorAll(".card");
+let radioSize = "70%";
+let isSelect = false;
+let customizeSection = document.querySelector(".customize-section");
+let codeSection = document.querySelector(".code-section");
+
+codeSection.style.display = "none";
+customizeSection.style.display = "none";
 
 settingsTab.forEach((tab, index) => {
   tab.addEventListener("click", () => {
@@ -12,15 +19,16 @@ let cssCode = document.querySelector(".css-section textarea");
 const root = document.querySelector(":root");
 const rootVal = getComputedStyle(root);
 
-let checkboxHtml = `<label class="checkbox-container">
-    Custom Checkbox
-    <input type="checkbox" />
-    <span class="fake-checkbox"></span>
+function changeCodeValue() {
+  let radioHtml = `<label class="radio-container">
+  Custom Radio Button
+  <input type="radio" />
+  <span class="fake-radio"></span>
 </label>`;
 
-let checkboxCss = `.checkbox-container {
+  let radioCss = `.radio-container {
   position: relative;
-  padding-left: 25px;
+  padding-left: 30px;
   height: 20px;
   display: flex;
   align-items: center;
@@ -29,58 +37,58 @@ let checkboxCss = `.checkbox-container {
 }
 
 
-.checkbox-container input {
+.radio-container input {
   opacity: 0;
 }
 
 
-.checkbox-container .fake-checkbox {
+.radio-container .fake-radio {
   position: absolute;
   left: 0;
   top: -1px;
   height: 100%;
   width: 20px;
-  border: 1px solid var(--black);
+  border: ${border};
+  border-radius: 50%;
+  background-color: ${backgroundColor};
+
 }
 
 
-.checkbox-container .fake-checkbox::before {
+.radio-container .fake-radio::before {
   content: "";
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -60%) rotate(45deg);
+  transform: translate(-50%, -50%);
   height: 0px;
   width: 0px;
-  /* background-color: var(--black); */
-  border: solid var(--black);
-  border-width: 0 2px 2px 0;
+  background-color: ${baseColor};
+  border-radius: 50%;
   transition: all 150ms ease;
-  opacity: 0;
 }
 
 
-.checkbox-container input:checked ~ .fake-checkbox::before {
-  height: 50%;
-  width: 30%;
-  opacity: 1;
+.radio-container input:checked ~ .fake-radio::before {
+  height: ${radioSize};
+  width: ${radioSize};
 }
 
 
-.checkbox-container input:disabled ~ .fake-checkbox::before {
+.radio-container input:disabled ~ .fake-radio::before {
   background-color: grey;
   opacity: 0.7;
 }
 
 
 
-.checkbox-container input:disabled ~ .fake-checkbox {
+.radio-container input:disabled ~ .fake-radio {
   border: 1px solid grey;
   opacity: 0.7;
 }`;
-
-htmlCode.value = checkboxHtml;
-cssCode.value = checkboxCss;
+  htmlCode.value = radioHtml;
+  cssCode.value = radioCss;
+}
 
 function changeRootVal(variable, value) {
   root.style.setProperty(variable, value);
@@ -130,6 +138,8 @@ let isUseBackground = document.querySelector(
 
 let useBackground = false;
 
+changeCodeValue();
+
 //click the card
 let currSelect = 0;
 cards.forEach((card, index) => {
@@ -137,6 +147,9 @@ cards.forEach((card, index) => {
     cards[currSelect].classList.remove("selected");
     card.classList.toggle("selected");
     currSelect = index;
+    customizeSection.style.display = "";
+    codeSection.style.display = "";
+
     checkCard(card);
   });
 });
@@ -149,14 +162,24 @@ function checkCard(elm) {
       useBorder = true;
       isUseBackground.checked = false;
       isUseBorder.checked = true;
+      radioSize = "70%";
+      changeBaseColor("#f8f8f8");
       changebackground(backgroundColorInput.value);
       changeBorder(baseColor, borderThickness);
+      changeRootVal("--result-radio-size", "70%");
+
       break;
     case cls.contains("radio2"):
       useBackground = true;
-      changebackground(backgroundColorInput.value);
+      isUseBorder.checked = false;
+      isUseBackground.checked = true;
       useBorder = false;
+      radioSize = "40%";
+      changebackground("#ca3e47");
+      changeBaseColor("#f8f8f8");
       changeRootVal("--result-border", "none");
+      changeRootVal("--result-radio-size", "40%");
+
       break;
     case cls.contains("radio3"):
       console.log("radio3");
@@ -178,18 +201,22 @@ baseColorInputHex.value = baseColor;
 baseColorInputHex.value = baseColorInput.value;
 
 baseColorInput.addEventListener("change", () => {
-  baseColor = baseColorInput.value;
-  baseColorInputHex.value = baseColorInput.value;
-  changeRootVal("--result-color", baseColor);
-  changeBorder(baseColor, borderThickness);
+  changeBaseColor(baseColorInput.value);
 });
 
 baseColorInputHex.addEventListener("change", () => {
-  baseColor = baseColorInputHex.value;
-  baseColorInput.value = baseColorInputHex.value;
-  changeRootVal("--result-color", baseColor);
-  changeRootVal("--result-border", baseColor);
+  changeBaseColor(baseColorInputHex.value);
 });
+
+function changeBaseColor(color) {
+  baseColor = color;
+  baseColorInput.value = color;
+  baseColorInputHex.value = color;
+  changeRootVal("--result-color", baseColor);
+  if (useBorder) {
+    changeRootVal("--result-border", baseColor);
+  }
+}
 
 //background color;
 isUseBackground.addEventListener("click", () => {
@@ -218,11 +245,13 @@ function changebackground(val) {
     backgroundColorInput.value = val;
     backgroundColorInputHex.value = val;
     changeRootVal("--result-background", val);
+    changeCodeValue();
   } else {
-    backgroundColor = val;
+    backgroundColor = "transparent";
     backgroundColorInput.value = val;
     backgroundColorInputHex.value = val;
     changeRootVal("--result-background", "transparent");
+    changeCodeValue();
   }
 }
 
@@ -231,6 +260,7 @@ borderThickInput.addEventListener("change", () => {
   borderThickness = borderThickInput.value;
   border = `${borderThickness}px solid ${borderColor}`;
   changeRootVal("--result-border", border);
+  changeBorder(borderColorInput.value, borderThickInput.value);
 });
 
 borderColorInput.addEventListener("change", () => {
@@ -256,4 +286,5 @@ function changeBorder(color, thick) {
   borderThickness = thick;
   border = `${borderThickness}px solid ${borderColor}`;
   changeRootVal("--result-border", border);
+  changeCodeValue();
 }
