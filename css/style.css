@@ -11,6 +11,9 @@
   --result-disabled-color: #a2a2a2;
   --result-disabled-opacity: 0.5;
   --result-radio-size: 70%;
+  --result-transform: translate(-50%, -50%);
+  --result-top: 50%;
+  --result-bottom: unset;
 }
 
 .custom-input-base .radio-container, .card-base .radio-container, .main .style-section .radio-option .card-container .card .radio-container, .main .customize-section .result-section .result-container .result-card .radio-container, .main .customize-section .editor ul li .edit-tab .radio-container,
@@ -75,6 +78,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
+  bottom: unset;
   transform: translate(-50%, -50%);
   height: 0px;
   width: 0px;
@@ -163,12 +167,12 @@
 .card-base, .main .style-section .radio-option .card-container .card, .main .customize-section .result-section .result-container .result-card {
   background-color: var(--light-black);
   max-width: 300px;
-  min-height: 350px;
+  min-height: 250px;
   border-radius: 20px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   transition: transform 250ms ease;
 }
 
@@ -279,9 +283,9 @@ body {
 
 .main .style-section .radio-option .card-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 3rem;
   width: 100%;
 }
 
@@ -413,6 +417,9 @@ body {
   background-color: var(--result-color);
   height: var(--result-radio-size) !important;
   width: var(--result-radio-size) !important;
+  transform: var(--result-transform);
+  top: var(--result-top);
+  bottom: var(--result-bottom);
 }
 
 .main .customize-section .result-section .result-container .result-card .radio-container input:disabled ~ .fake-radio,

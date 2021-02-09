@@ -2,6 +2,12 @@ let settingsTab = document.querySelectorAll(".editor ul li .edit-title");
 let cards = document.querySelectorAll(".card");
 let radioSize = "70%";
 let isSelect = false;
+let pos = {
+  top: "50%",
+  bottom: "unset",
+  transform: "translate(-50%, -50%)",
+};
+
 let customizeSection = document.querySelector(".customize-section");
 let codeSection = document.querySelector(".code-section");
 
@@ -59,8 +65,9 @@ function changeCodeValue() {
   content: "";
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: ${pos.top};
+  bottom : ${pos.bottom};
+  transform: ${pos.transform};
   height: 0px;
   width: 0px;
   background-color: ${baseColor};
@@ -167,6 +174,7 @@ function checkCard(elm) {
       changebackground(backgroundColorInput.value);
       changeBorder(baseColor, borderThickness);
       changeRootVal("--result-radio-size", "70%");
+      changePosition("50%", "unset", "-50");
 
       break;
     case cls.contains("radio2"):
@@ -179,10 +187,20 @@ function checkCard(elm) {
       changeBaseColor("#f8f8f8");
       changeRootVal("--result-border", "none");
       changeRootVal("--result-radio-size", "40%");
+      changePosition("50%", "unset", "-50");
 
       break;
     case cls.contains("radio3"):
-      console.log("radio3");
+      useBackground = true;
+      isUseBackground.checked = true;
+      isUseBorder.checked = false;
+      useBorder = false;
+      radioSize = "80%";
+      changebackground("#f8f8f8");
+      changeBaseColor("#ca3e47");
+      changeRootVal("--result-border", "none");
+      changeRootVal("--result-radio-size", "80%");
+      changePosition("unset", "0", "0");
       break;
     case cls.contains("checkbox1"):
       break;
@@ -286,5 +304,17 @@ function changeBorder(color, thick) {
   borderThickness = thick;
   border = `${borderThickness}px solid ${borderColor}`;
   changeRootVal("--result-border", border);
+  changeCodeValue();
+}
+
+//position
+function changePosition(top, bottom, Htransform) {
+  changeRootVal("--result-bottom", bottom);
+  changeRootVal("--result-top", top);
+  let transform = `translate(-50%, ${Htransform}%)`;
+  changeRootVal("--result-transform", transform);
+  pos.top = top;
+  pos.bottom = bottom;
+  pos.transform = transform;
   changeCodeValue();
 }
