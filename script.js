@@ -7,6 +7,7 @@ let pos = {
   bottom: "unset",
   transform: "translate(-50%, -50%)",
 };
+let opacityVal = 0.5;
 
 let customizeSection = document.querySelector(".customize-section");
 let codeSection = document.querySelector(".code-section");
@@ -82,16 +83,9 @@ function changeCodeValue() {
 }
 
 
-.radio-container input:disabled ~ .fake-radio::before {
-  background-color: grey;
-  opacity: 0.7;
-}
-
-
-
 .radio-container input:disabled ~ .fake-radio {
   border: 1px solid grey;
-  opacity: 0.7;
+  opacity: ${opacityVal};
 }`;
   htmlCode.value = radioHtml;
   cssCode.value = radioCss;
@@ -142,6 +136,11 @@ backgroundColorInputHex.value = backgroundColorInput.value;
 let isUseBackground = document.querySelector(
   '.background-color input[type="checkbox"]'
 );
+
+//disabled input var
+let disabledVerInput = document.querySelector(".disabled-ver input");
+let disValElm = document.querySelector(".disabled-ver .val-container p");
+changeDisabledVer(disabledVerInput.value);
 
 let useBackground = false;
 
@@ -276,9 +275,11 @@ function changebackground(val) {
 //border
 borderThickInput.addEventListener("change", () => {
   borderThickness = borderThickInput.value;
-  border = `${borderThickness}px solid ${borderColor}`;
-  changeRootVal("--result-border", border);
-  changeBorder(borderColorInput.value, borderThickInput.value);
+  if (isUseBorder.checked) {
+    border = `${borderThickness}px solid ${borderColor}`;
+    changeRootVal("--result-border", border);
+    changeBorder(borderColorInput.value, borderThickness);
+  }
 });
 
 borderColorInput.addEventListener("change", () => {
@@ -292,6 +293,7 @@ borderColorInputHex.addEventListener("change", () => {
 isUseBorder.addEventListener("click", () => {
   if (isUseBorder.checked) {
     changeRootVal("--result-border", border);
+    changeBorder(borderColorInput.value, borderThickness);
   } else {
     changeRootVal("--result-border", "none");
   }
@@ -302,9 +304,11 @@ function changeBorder(color, thick) {
   borderColorInputHex.value = color;
   borderColor = color;
   borderThickness = thick;
-  border = `${borderThickness}px solid ${borderColor}`;
-  changeRootVal("--result-border", border);
-  changeCodeValue();
+  if (isUseBorder.checked) {
+    border = `${borderThickness}px solid ${borderColor}`;
+    changeRootVal("--result-border", border);
+    changeCodeValue();
+  }
 }
 
 //position
@@ -316,5 +320,18 @@ function changePosition(top, bottom, Htransform) {
   pos.top = top;
   pos.bottom = bottom;
   pos.transform = transform;
+  changeCodeValue();
+}
+
+//change disabled version
+disabledVerInput.addEventListener("input", (e) => {
+  changeDisabledVer(e.target.value);
+});
+
+function changeDisabledVer(val) {
+  disValElm.style.left = val * 10 - 5 + "%";
+  disValElm.textContent = val * 10 + "%";
+  opacityVal = val / 10;
+  changeRootVal("--result-disabled-opacity", opacityVal);
   changeCodeValue();
 }
