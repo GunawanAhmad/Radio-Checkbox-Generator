@@ -29,7 +29,7 @@ const rootVal = getComputedStyle(root);
 function changeCodeValue() {
   let radioHtml = `<label class="radio-container">
   Custom Radio Button
-  <input type="radio" />
+  <input type="radio" name="radio"/>
   <span class="fake-radio"></span>
 </label>`;
 
@@ -335,3 +335,28 @@ function changeDisabledVer(val) {
   changeRootVal("--result-disabled-opacity", opacityVal);
   changeCodeValue();
 }
+
+//copy function
+let htmlText = document.querySelector(".html-section textarea");
+let cssText = document.querySelector(".css-section textarea");
+let htmlCopyBtn = document.querySelector(".html-section button");
+let cssCopyBtn = document.querySelector(".css-section button");
+
+function copyCode(val) {
+  let elm = document.createElement("textarea");
+  elm.style.position = "absolute";
+  elm.style.left = "-999999";
+  elm.value = val;
+  document.body.appendChild(elm);
+
+  elm.select();
+  elm.setSelectionRange(0, 99999); /* For mobile devices */
+  document.execCommand("copy");
+}
+
+htmlCopyBtn.addEventListener("click", () => {
+  copyCode(htmlText.value);
+});
+cssCopyBtn.addEventListener("click", () => {
+  copyCode(cssText.value);
+});
