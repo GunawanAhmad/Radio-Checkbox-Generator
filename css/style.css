@@ -14,6 +14,14 @@
   --result-transform: translate(-50%, -50%);
   --result-top: 50%;
   --result-bottom: unset;
+  --result-border-radius: 5%;
+  --result-checkmark-color: #313131;
+  --result-checkmark-thick: 3px;
+  --result-checkmark-color: #313131;
+  --result-checkmark-background: transparent;
+  --result-checkmark-transform: translate(-50%, -50%) rotate(45deg);
+  --result-checkmark-height: 50%;
+  --result-checkmark-width: 30%;
 }
 
 .custom-input-base .radio-container, .card-base .radio-container, .main .style-section .radio-option .card-container .card .radio-container, .main .customize-section .result-section .result-container .result-card .radio-container, .main .customize-section .editor ul li .edit-tab .radio-container,
@@ -150,6 +158,7 @@
   opacity: 0;
   height: 0;
   width: 0;
+  background: transparent;
   transition: height 150ms ease, width 150ms ease;
 }
 
@@ -394,26 +403,19 @@ body {
   max-width: 350px;
 }
 
-.main .customize-section .result-section .result-container .result-card .radio-container,
-.main .customize-section .result-section .result-container .result-card .checkbox-container {
+.main .customize-section .result-section .result-container .result-card .radio-container {
   height: 30px;
   font-size: 1rem;
   padding-left: 40px;
 }
 
-.main .customize-section .result-section .result-container .result-card .radio-container .fake-radio,
-.main .customize-section .result-section .result-container .result-card .radio-container .checkmark,
-.main .customize-section .result-section .result-container .result-card .checkbox-container .fake-radio,
-.main .customize-section .result-section .result-container .result-card .checkbox-container .checkmark {
+.main .customize-section .result-section .result-container .result-card .radio-container .fake-radio {
   width: 30px;
   background-color: var(--result-background);
   border: var(--result-border);
 }
 
-.main .customize-section .result-section .result-container .result-card .radio-container .fake-radio::before,
-.main .customize-section .result-section .result-container .result-card .radio-container .checkmark::before,
-.main .customize-section .result-section .result-container .result-card .checkbox-container .fake-radio::before,
-.main .customize-section .result-section .result-container .result-card .checkbox-container .checkmark::before {
+.main .customize-section .result-section .result-container .result-card .radio-container .fake-radio::before {
   background-color: var(--result-color);
   height: var(--result-radio-size) !important;
   width: var(--result-radio-size) !important;
@@ -422,15 +424,44 @@ body {
   bottom: var(--result-bottom);
 }
 
-.main .customize-section .result-section .result-container .result-card .radio-container input:disabled ~ .fake-radio,
-.main .customize-section .result-section .result-container .result-card .checkbox-container input:disabled ~ .fake-radio {
+.main .customize-section .result-section .result-container .result-card .radio-container input:disabled ~ .fake-radio {
   opacity: var(--result-disabled-opacity);
   background-color: var(--result-background);
 }
 
-.main .customize-section .result-section .result-container .result-card .radio-container input:disabled ~ .fake-radio::before,
-.main .customize-section .result-section .result-container .result-card .checkbox-container input:disabled ~ .fake-radio::before {
+.main .customize-section .result-section .result-container .result-card .radio-container input:disabled ~ .fake-radio::before {
   background-color: var(--result-color);
+}
+
+.main .customize-section .result-section .result-container .result-card .checkbox-container {
+  height: 30px;
+  font-size: 1rem;
+  padding-left: 40px;
+}
+
+.main .customize-section .result-section .result-container .result-card .checkbox-container .checkmark {
+  width: 30px;
+  background-color: var(--result-background);
+  border: var(--result-border);
+  border-radius: var(--result-border-radius);
+}
+
+.main .customize-section .result-section .result-container .result-card .checkbox-container .checkmark::before {
+  border-width: 0px var(--result-checkmark-thick) var(--result-checkmark-thick) 0px;
+  background-color: var(--result-checkmark-background);
+  border-color: var(--result-checkmark-color);
+  transform: var(--result-checkmark-transform);
+  top: var(--result-top);
+}
+
+.main .customize-section .result-section .result-container .result-card .checkbox-container input:disabled ~ .checkmark {
+  opacity: var(--result-disabled-opacity);
+  background-color: var(--result-background);
+}
+
+.main .customize-section .result-section .result-container .result-card .checkbox-container input:checked ~ .checkmark::before {
+  height: var(--result-checkmark-height);
+  width: var(--result-checkmark-width);
 }
 
 .main .customize-section .result-section .result-container .to-code-action {
@@ -466,6 +497,10 @@ body {
   list-style: none;
   border-bottom: 1px solid var(--light-black);
   width: 100%;
+}
+
+.main .customize-section .editor ul li.hide {
+  display: none;
 }
 
 .main .customize-section .editor ul li.show .edit-tab {

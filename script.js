@@ -1,148 +1,15 @@
-let settingsTab = document.querySelectorAll(".editor ul li .edit-title");
-let cards = document.querySelectorAll(".card");
-let radioSize = "70%";
-let isSelect = false;
-let pos = {
-  top: "50%",
-  bottom: "unset",
-  transform: "translate(-50%, -50%)",
-};
-let opacityVal = 0.5;
-
-let customizeSection = document.querySelector(".customize-section");
-let codeSection = document.querySelector(".code-section");
-
 codeSection.style.display = "none";
 customizeSection.style.display = "none";
-
+changeDisabledVer(disabledVerInput.value);
 settingsTab.forEach((tab, index) => {
   tab.addEventListener("click", () => {
     tab.parentElement.classList.toggle("show");
   });
 });
 
-let htmlCode = document.querySelector(".html-section textarea");
-let cssCode = document.querySelector(".css-section textarea");
-const root = document.querySelector(":root");
-const rootVal = getComputedStyle(root);
-
-function changeCodeValue() {
-  let radioHtml = `<label class="radio-container">
-  Custom Radio Button
-  <input type="radio" name="radio"/>
-  <span class="fake-radio"></span>
-</label>`;
-
-  let radioCss = `.radio-container {
-  position: relative;
-  padding-left: 30px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  margin: 0.5rem 0;
-}
-
-
-.radio-container input {
-  opacity: 0;
-}
-
-
-.radio-container .fake-radio {
-  position: absolute;
-  left: 0;
-  top: -1px;
-  height: 100%;
-  width: 20px;
-  border: ${border};
-  border-radius: 50%;
-  background-color: ${backgroundColor};
-
-}
-
-
-.radio-container .fake-radio::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: ${pos.top};
-  bottom : ${pos.bottom};
-  transform: ${pos.transform};
-  height: 0px;
-  width: 0px;
-  background-color: ${baseColor};
-  border-radius: 50%;
-  transition: all 150ms ease;
-}
-
-
-.radio-container input:checked ~ .fake-radio::before {
-  height: ${radioSize};
-  width: ${radioSize};
-}
-
-
-.radio-container input:disabled ~ .fake-radio {
-  border: 1px solid grey;
-  opacity: ${opacityVal};
-}`;
-  htmlCode.value = radioHtml;
-  cssCode.value = radioCss;
-}
-
 function changeRootVal(variable, value) {
   root.style.setProperty(variable, value);
 }
-
-//base color var
-let baseColor = "#f8f8f8";
-let baseColorInput = document.querySelector('.base-color input[type="color"');
-let baseColorInputHex = document.querySelector('.base-color input[type="text"');
-
-//border color var
-let borderColor = "#f8f8f8";
-let useBorder = true;
-let borderThickness = 1;
-let border = `${borderThickness}px solid ${borderColor}`;
-let borderColorInput = document.querySelector(
-  '.border-color input[type="color"'
-);
-
-let borderColorInputHex = document.querySelector(
-  '.border-color input[type="text"]'
-);
-
-let isUseBorder = document.querySelector(
-  '.border-color input[type="checkbox"]'
-);
-
-let borderThickInput = document.querySelector(
-  '.border-color input[type="number"]'
-);
-
-borderThickInput.value = borderThickness;
-
-//background color var
-let backgroundColor = "transparent";
-let backgroundColorInput = document.querySelector(
-  '.background-color input[type="color"]'
-);
-backgroundColorInput.value = "#ca3e47";
-let backgroundColorInputHex = document.querySelector(
-  '.background-color input[type="text"]'
-);
-backgroundColorInputHex.value = backgroundColorInput.value;
-let isUseBackground = document.querySelector(
-  '.background-color input[type="checkbox"]'
-);
-
-//disabled input var
-let disabledVerInput = document.querySelector(".disabled-ver input");
-let disValElm = document.querySelector(".disabled-ver .val-container p");
-changeDisabledVer(disabledVerInput.value);
-
-let useBackground = false;
 
 changeCodeValue();
 
@@ -164,6 +31,8 @@ function checkCard(elm) {
   let cls = elm.classList;
   switch (true) {
     case cls.contains("radio1"):
+      changeResultType("radio", "radio1");
+      selectedInput = "radio";
       useBackground = false;
       useBorder = true;
       isUseBackground.checked = false;
@@ -177,6 +46,8 @@ function checkCard(elm) {
 
       break;
     case cls.contains("radio2"):
+      selectedInput = "radio";
+
       useBackground = true;
       isUseBorder.checked = false;
       isUseBackground.checked = true;
@@ -190,6 +61,7 @@ function checkCard(elm) {
 
       break;
     case cls.contains("radio3"):
+      selectedInput = "radio";
       useBackground = true;
       isUseBackground.checked = true;
       isUseBorder.checked = false;
@@ -202,10 +74,78 @@ function checkCard(elm) {
       changePosition("unset", "0", "0");
       break;
     case cls.contains("checkbox1"):
+      changeResultType("checkbox", "checkbox1");
+      selectedInput = "checkbox";
+      isUseBackground.checked = true;
+      useBackground = true;
+      useBorder = false;
+      isUseBorder.checked = false;
+      changebackground("#f8f8f8");
+      changeRootVal("--result-border", "none");
+      changeBaseColor("#ca3e47");
+      changePosition("unset", "0", "0");
+      changeCheckmark("#313131");
+
+      changeRootVal("--result-border-radius", "5%");
+      changeRootVal("--result-checkmark-thick", "3px");
+      changeRootVal("--result-checkmark-background", "transparent");
+      changeRootVal("--result-top", "40%");
+      changeRootVal("--result-checkmark-height", "50%");
+      changeRootVal("--result-checkmark-width", "30%");
+      changeRootVal(
+        "--result-checkmark-transform",
+        "translate(-50%, -50%) rotate(45deg)"
+      );
+
       break;
     case cls.contains("checkbox2"):
+      changeResultType("checkbox", "checkbox2");
+      selectedInput = "checkbox";
+      isUseBackground.checked = true;
+      useBackground = true;
+      useBorder = false;
+      isUseBorder.checked = false;
+      changebackground("#f8f8f8");
+      changeRootVal("--result-border", "none");
+      changeBaseColor("#ca3e47");
+      changePosition("unset", "0", "0");
+      changeCheckmark("#313131");
+
+      changeRootVal("--result-border-radius", "50%");
+      changeRootVal("--result-checkmark-thick", "3px");
+      changeRootVal("--result-checkmark-background", "transparent");
+      changeRootVal("--result-top", "40%");
+      changeRootVal("--result-checkmark-height", "50%");
+      changeRootVal("--result-checkmark-width", "30%");
+      changeRootVal(
+        "--result-checkmark-transform",
+        "translate(-50%, -50%) rotate(45deg)"
+      );
+
       break;
     case cls.contains("checkbox3"):
+      changeResultType("checkbox", "checkbox3");
+      selectedInput = "checkbox";
+      isUseBackground.checked = true;
+      useBackground = true;
+      useBorder = false;
+      isUseBorder.checked = false;
+      changebackground("#f8f8f8");
+      changeCheckmark("#313131");
+      changeRootVal("--result-border", "none");
+      changeBaseColor("#ca3e47");
+      changePosition("unset", "0", "0");
+      changeRootVal("--result-border-radius", "5%");
+      changeRootVal("--result-checkmark-background", "#313131");
+      changeRootVal("--result-checkmark-thick", "0");
+      changeRootVal("--result-checkmark-height", "70%");
+      changeRootVal("--result-checkmark-width", "70%");
+      changeRootVal(
+        "--result-checkmark-transform",
+        "translate(-50%, -50%) rotate(0deg)"
+      );
+      changeRootVal("--result-top", "50%");
+
       break;
     default:
       break;
@@ -337,10 +277,6 @@ function changeDisabledVer(val) {
 }
 
 //copy function
-let htmlText = document.querySelector(".html-section textarea");
-let cssText = document.querySelector(".css-section textarea");
-let htmlCopyBtn = document.querySelector(".html-section button");
-let cssCopyBtn = document.querySelector(".css-section button");
 
 function copyCode(val) {
   let elm = document.createElement("textarea");
@@ -360,3 +296,40 @@ htmlCopyBtn.addEventListener("click", () => {
 cssCopyBtn.addEventListener("click", () => {
   copyCode(cssText.value);
 });
+
+function changeResultType(type, className) {
+  let containers = document.querySelectorAll(
+    `.result-card .${selectedInput}-container`
+  );
+  containers.forEach((con) => {
+    con.className = `${type}-container`;
+  });
+  let fakeContainers = document.querySelectorAll(".result-card .fake");
+
+  fakeContainers.forEach((con) => {
+    if (type == "radio") {
+      con.classList.add("fake-radio");
+      con.classList.remove("checkmark");
+    } else {
+      con.classList.add("checkmark");
+      con.classList.remove("fake-radio");
+    }
+    con.classList.add(className);
+  });
+
+  let inputs = document.querySelectorAll(".result-card input");
+  inputs.forEach((input) => {
+    input.type = `${type}`;
+  });
+}
+
+//checkmark
+
+function changeCheckmark(val) {
+  checkmarkColorInput.value = val;
+  checkmarkColorInputHex.value = val;
+  checkmarkColor = val;
+  changeRootVal("--result-checkmark-color", val);
+}
+
+changeCheckmark();

@@ -8,7 +8,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <script defer src="./script.js"></script>
+    <script defer src="./variable.js"></script>
+    <script defer src="./codeResult.js"></script>
+    <script defer src="./script.js" type="module"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -308,22 +310,22 @@
                   <label class="radio-container">
                     Option 1
                     <input type="radio" name="radioRes" checked />
-                    <span class="fake-radio"></span>
+                    <span class="fake-radio fake"></span>
                   </label>
                   <label class="radio-container">
                     Option 2
                     <input type="radio" name="radioRes" />
-                    <span class="fake-radio"></span>
+                    <span class="fake-radio fake"></span>
                   </label>
                   <label class="radio-container">
                     Option 3 (disabled)
                     <input type="radio" name="radioRes2" checked disabled />
-                    <span class="fake-radio"></span>
+                    <span class="fake-radio fake"></span>
                   </label>
                   <label class="radio-container">
                     Option 4 (disabled)
                     <input type="radio" name="radioRes2" disabled />
-                    <span class="fake-radio"></span>
+                    <span class="fake-radio fake"></span>
                   </label>
                 </div>
               </div>
@@ -380,6 +382,30 @@
                     <div class="input-tab">
                       <input type="color" />
                       <input type="text" />
+                    </div>
+                  </div>
+                </li>
+                <li class="checkmark hide">
+                  <div class="edit-title">
+                    <h2>CHECKMARK</h2>
+                    <span class="arrow"></span>
+                  </div>
+                  <div class="edit-tab">
+                    <div class="input-tab">
+                      <input type="color" />
+                      <input type="text" />
+                    </div>
+                    <div class="thick-input input">
+                      <p>Thickness</p>
+                      <div class="input-size">
+                        <input
+                          type="number"
+                          class="input-size"
+                          min="0"
+                          max="100"
+                        />
+                        <span>px</span>
+                      </div>
                     </div>
                   </div>
                 </li>

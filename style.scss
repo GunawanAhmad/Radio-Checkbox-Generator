@@ -15,6 +15,14 @@
   --result-transform: translate(-50%, -50%);
   --result-top: 50%;
   --result-bottom: unset;
+  --result-border-radius: 5%;
+  --result-checkmark-color: #313131;
+  --result-checkmark-thick: 3px;
+  --result-checkmark-color: #313131;
+  --result-checkmark-background: transparent;
+  --result-checkmark-transform: translate(-50%, -50%) rotate(45deg);
+  --result-checkmark-height: 50%;
+  --result-checkmark-width: 30%;
 }
 
 .custom-input-base {
@@ -92,6 +100,7 @@
         opacity: 0;
         height: 0;
         width: 0;
+        background: transparent;
         transition: height 150ms ease, width 150ms ease;
       }
     }
@@ -347,14 +356,12 @@ body {
           align-items: center;
           max-width: 350px;
 
-          .radio-container,
-          .checkbox-container {
+          .radio-container {
             height: 30px;
             font-size: 1rem;
             padding-left: 40px;
 
-            .fake-radio,
-            .checkmark {
+            .fake-radio {
               width: 30px;
               background-color: var(--result-background);
               border: var(--result-border);
@@ -377,6 +384,36 @@ body {
 
             input:disabled ~ .fake-radio::before {
               background-color: var(--result-color);
+            }
+          }
+
+          .checkbox-container {
+            height: 30px;
+            font-size: 1rem;
+            padding-left: 40px;
+
+            .checkmark {
+              width: 30px;
+              background-color: var(--result-background);
+              border: var(--result-border);
+              border-radius: var(--result-border-radius);
+
+              &::before {
+                border-width: 0px var(--result-checkmark-thick)
+                  var(--result-checkmark-thick) 0px;
+                background-color: var(--result-checkmark-background);
+                border-color: var(--result-checkmark-color);
+                transform: var(--result-checkmark-transform);
+                top: var(--result-top);
+              }
+            }
+            input:disabled ~ .checkmark {
+              opacity: var(--result-disabled-opacity);
+              background-color: var(--result-background);
+            }
+            input:checked ~ .checkmark::before {
+              height: var(--result-checkmark-height);
+              width: var(--result-checkmark-width);
             }
           }
         }
@@ -417,6 +454,10 @@ body {
         li {
           list-style: none;
           border-bottom: 1px solid var(--light-black);
+
+          &.hide {
+            display: none;
+          }
 
           &.show {
             .edit-tab {
