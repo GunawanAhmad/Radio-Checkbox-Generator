@@ -9,6 +9,7 @@ let pos = {
 };
 let opacityVal = 0.5;
 let selectedInput = "radio";
+let selectedStyle = "";
 
 let customizeSection = document.querySelector(".customize-section");
 let codeSection = document.querySelector(".code-section");
@@ -79,5 +80,11 @@ let checkmarkColorInput = document.querySelector(
 let checkmarkColorInputHex = document.querySelector(
   '.checkmark input[type="text"'
 );
+
+let checkmarkThicknes = 3;
+let checkmarkThickInput = document.querySelector(
+  ".checkmark .thick-input input"
+);
+checkmarkThickInput.value = checkmarkThicknes;
 
 let checkmarkColor = "#313131";

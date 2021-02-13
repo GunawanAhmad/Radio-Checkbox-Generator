@@ -33,6 +33,8 @@ function checkCard(elm) {
     case cls.contains("radio1"):
       changeResultType("radio", "radio1");
       selectedInput = "radio";
+      selectedStyle = "radio1";
+      changeEditorTab();
       useBackground = false;
       useBorder = true;
       isUseBackground.checked = false;
@@ -47,6 +49,8 @@ function checkCard(elm) {
       break;
     case cls.contains("radio2"):
       selectedInput = "radio";
+      selectedStyle = "radio2";
+      changeEditorTab();
 
       useBackground = true;
       isUseBorder.checked = false;
@@ -62,6 +66,9 @@ function checkCard(elm) {
       break;
     case cls.contains("radio3"):
       selectedInput = "radio";
+      selectedStyle = "radio3";
+      changeEditorTab();
+
       useBackground = true;
       isUseBackground.checked = true;
       isUseBorder.checked = false;
@@ -76,6 +83,9 @@ function checkCard(elm) {
     case cls.contains("checkbox1"):
       changeResultType("checkbox", "checkbox1");
       selectedInput = "checkbox";
+      selectedStyle = "checkbox1";
+      changeEditorTab();
+
       isUseBackground.checked = true;
       useBackground = true;
       useBorder = false;
@@ -101,6 +111,9 @@ function checkCard(elm) {
     case cls.contains("checkbox2"):
       changeResultType("checkbox", "checkbox2");
       selectedInput = "checkbox";
+      selectedStyle = "checkbox2";
+      changeEditorTab();
+
       isUseBackground.checked = true;
       useBackground = true;
       useBorder = false;
@@ -126,6 +139,9 @@ function checkCard(elm) {
     case cls.contains("checkbox3"):
       changeResultType("checkbox", "checkbox3");
       selectedInput = "checkbox";
+      selectedStyle = "checkbox3";
+      changeEditorTab();
+
       isUseBackground.checked = true;
       useBackground = true;
       useBorder = false;
@@ -326,10 +342,49 @@ function changeResultType(type, className) {
 //checkmark
 
 function changeCheckmark(val) {
-  checkmarkColorInput.value = val;
-  checkmarkColorInputHex.value = val;
-  checkmarkColor = val;
-  changeRootVal("--result-checkmark-color", val);
+  if (selectedStyle === "checkbox3") {
+    changeRootVal("--result-checkmark-background", val);
+  } else {
+    checkmarkColorInput.value = val;
+    checkmarkColorInputHex.value = val;
+    checkmarkColor = val;
+    changeRootVal("--result-checkmark-color", val);
+  }
 }
 
-changeCheckmark();
+function changeCheckmarkThickness(val) {
+  checkmarkThicknes = val;
+  checkmarkThickInput.value = val;
+  changeRootVal("--result-checkmark-thick", val);
+}
+
+checkmarkThickInput.addEventListener("change", (e) => {
+  changeCheckmarkThickness(e.target.value);
+});
+
+checkmarkColorInput.addEventListener("change", (e) => {
+  changeCheckmark(e.target.value);
+});
+
+checkmarkColorInputHex.addEventListener("change", (e) => {
+  changeCheckmark(e.target.value);
+});
+
+function changeEditorTab() {
+  if (selectedInput === "radio") {
+    settingsTab[0].parentElement.classList.remove("hide");
+    settingsTab[0].parentElement.classList.add("show");
+
+    settingsTab[1].parentElement.classList.add("hide");
+  } else {
+    if (selectedStyle === "checkbox3") {
+      checkmarkThickInput.parentElement.parentElement.style.display = "none";
+    } else {
+      checkmarkThickInput.parentElement.parentElement.style.display = "";
+    }
+    settingsTab[0].parentElement.classList.add("hide");
+    settingsTab[1].parentElement.classList.add("show");
+
+    settingsTab[1].parentElement.classList.remove("hide");
+  }
+}
