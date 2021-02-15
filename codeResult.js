@@ -114,32 +114,25 @@ function checkboxCode() {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -60%) rotate(45deg);
+    transform: ${checkmarkTransform};
     height: 0px;
     width: 0px;
-    /* background-color: var(--black); */
-    border: solid var(--black);
-    border-width: 0 2px 2px 0;
+    background-color: ${checkmarkBg};
+    border: solid ${checkmarkBorderClr};
+    border-width: 0 ${checkmarkThick} ${checkmarkThick} 0;
     transition: all 150ms ease;
     opacity: 0;
   }
   
   .checkbox-container input:checked ~ .fake-checkbox::before {
-    height: 50%;
-    width: 30%;
+    height: ${checkmarkSize.height};
+    width: ${checkmarkSize.width};
     opacity: 1;
   }
   
-  .checkbox-container input:disabled ~ .fake-checkbox::before {
-    /* background-color: grey; */
-    opacity: 0.7;
-  }
-  
-  
-  
   .checkbox-container input:disabled ~ .fake-checkbox {
-    border: 1px solid grey;
-    opacity: 0.7;
+    
+    opacity: ${opacityVal};
   }`;
 
   return {

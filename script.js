@@ -348,12 +348,14 @@ function changeCheckmark(val) {
     checkmarkColorInput.value = val;
     checkmarkColorInputHex.value = val;
     checkmarkColor = val;
+    checkmarkBorderClr = val;
+
     changeRootVal("--result-checkmark-color", val);
   }
 }
 
 function changeCheckmarkThickness(val) {
-  checkmarkThicknes = val;
+  checkmarkThick = val + "px";
   checkmarkThickInput.value = val;
   changeRootVal("--result-checkmark-thick", val);
 }

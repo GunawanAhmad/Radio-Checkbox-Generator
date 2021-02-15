@@ -7,7 +7,16 @@ let pos = {
   bottom: "unset",
   transform: "translate(-50%, -50%)",
 };
+let checkmarkSize = {
+  height: "50%",
+  width: "30%",
+};
+let checkmarkBg = "transparent";
+let checkmarkBorderClr = "#313131";
+let checkmarkTransform = "translate(-50%, -50%) rotate(45deg)";
 let opacityVal = 0.5;
+let checkmarkThick = "3px";
+
 let selectedInput = "radio";
 let selectedStyle = "";
 
@@ -81,7 +90,6 @@ let checkmarkColorInputHex = document.querySelector(
   '.checkmark input[type="text"'
 );
 
-let checkmarkThicknes = 3;
 let checkmarkThickInput = document.querySelector(
   ".checkmark .thick-input input"
 );
