@@ -623,7 +623,7 @@ body {
 
 .main .customize-section .editor ul li .edit-tab .range-input .val-container p {
   position: absolute;
-  left: 0%;
+  left: 50%;
   margin-top: 1rem;
   color: var(--white);
 }

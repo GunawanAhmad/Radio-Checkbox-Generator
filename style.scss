@@ -352,6 +352,8 @@ body {
           @extend .card-base;
 
           display: flex;
+          background-color: transparent;
+          border: 2px solid var(--black);
           justify-content: center;
           align-items: center;
           max-width: 350px;
@@ -360,6 +362,7 @@ body {
             height: 30px;
             font-size: 1rem;
             padding-left: 40px;
+            color: black;
 
             .fake-radio {
               width: 30px;
@@ -391,6 +394,7 @@ body {
             height: 30px;
             font-size: 1rem;
             padding-left: 40px;
+            color: black;
 
             .checkmark {
               width: 30px;
@@ -588,7 +592,7 @@ body {
 
                 p {
                   position: absolute;
-                  left: 0%;
+                  left: 50%;
                   margin-top: 1rem;
                   color: var(--white);
                   // transform: translate(-50%, -50%);

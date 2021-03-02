@@ -15,7 +15,9 @@ let checkmarkBg = "transparent";
 let checkmarkBorderClr = "#313131";
 let checkmarkTransform = "translate(-50%, -50%) rotate(45deg)";
 let opacityVal = 0.5;
-let checkmarkThick = "3px";
+let checkmarkThick = 3;
+let checkmarkTop = "50%";
+let borderRadius = "5%";
 
 let selectedInput = "radio";
 let selectedStyle = "";
@@ -93,6 +95,10 @@ let checkmarkColorInputHex = document.querySelector(
 let checkmarkThickInput = document.querySelector(
   ".checkmark .thick-input input"
 );
-checkmarkThickInput.value = checkmarkThicknes;
+checkmarkThickInput.value = checkmarkThick;
 
 let checkmarkColor = "#313131";
+
+// function getRootVal(val) {
+//   return getComputedStyle(document.documentElement).getPropertyValue(val);
+// }

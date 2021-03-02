@@ -1,6 +1,6 @@
 codeSection.style.display = "none";
 customizeSection.style.display = "none";
-changeDisabledVer(disabledVerInput.value);
+// changeDisabledVer(disabledVerInput.value);
 settingsTab.forEach((tab, index) => {
   tab.addEventListener("click", () => {
     tab.parentElement.classList.toggle("show");
@@ -40,7 +40,7 @@ function checkCard(elm) {
       isUseBackground.checked = false;
       isUseBorder.checked = true;
       radioSize = "70%";
-      changeBaseColor("#f8f8f8");
+      changeBaseColor("#313131");
       changebackground(backgroundColorInput.value);
       changeBorder(baseColor, borderThickness);
       changeRootVal("--result-radio-size", "70%");
@@ -57,6 +57,7 @@ function checkCard(elm) {
       isUseBackground.checked = true;
       useBorder = false;
       radioSize = "40%";
+      changeBorder("313131");
       changebackground("#ca3e47");
       changeBaseColor("#f8f8f8");
       changeRootVal("--result-border", "none");
@@ -74,7 +75,7 @@ function checkCard(elm) {
       isUseBorder.checked = false;
       useBorder = false;
       radioSize = "80%";
-      changebackground("#f8f8f8");
+      changebackground("#a2a2a2");
       changeBaseColor("#ca3e47");
       changeRootVal("--result-border", "none");
       changeRootVal("--result-radio-size", "80%");
@@ -85,17 +86,23 @@ function checkCard(elm) {
       selectedInput = "checkbox";
       selectedStyle = "checkbox1";
       changeEditorTab();
+      checkmarkTransform = "translate(-50%, -50%) rotate(45deg)";
 
       isUseBackground.checked = true;
       useBackground = true;
       useBorder = false;
       isUseBorder.checked = false;
-      changebackground("#f8f8f8");
+      checkmarkTop = "40%";
+      borderRadius = "5%";
+      checkmarkThick = 3;
+      checkmarkSize.height = "50%";
+      checkmarkSize.width = "30%";
+      checkmarkBg = "transparent";
+      changebackground("#a2a2a2");
       changeRootVal("--result-border", "none");
       changeBaseColor("#ca3e47");
       changePosition("unset", "0", "0");
       changeCheckmark("#313131");
-
       changeRootVal("--result-border-radius", "5%");
       changeRootVal("--result-checkmark-thick", "3px");
       changeRootVal("--result-checkmark-background", "transparent");
@@ -113,12 +120,19 @@ function checkCard(elm) {
       selectedInput = "checkbox";
       selectedStyle = "checkbox2";
       changeEditorTab();
+      checkmarkBg = "transparent";
+      checkmarkTransform = "translate(-50%, -50%) rotate(45deg)";
 
       isUseBackground.checked = true;
       useBackground = true;
       useBorder = false;
       isUseBorder.checked = false;
-      changebackground("#f8f8f8");
+      checkmarkTop = "40%";
+      borderRadius = "50%";
+      checkmarkThick = 3;
+      checkmarkSize.height = "50%";
+      checkmarkSize.width = "30%";
+      changebackground("#a2a2a2");
       changeRootVal("--result-border", "none");
       changeBaseColor("#ca3e47");
       changePosition("unset", "0", "0");
@@ -128,6 +142,7 @@ function checkCard(elm) {
       changeRootVal("--result-checkmark-thick", "3px");
       changeRootVal("--result-checkmark-background", "transparent");
       changeRootVal("--result-top", "40%");
+
       changeRootVal("--result-checkmark-height", "50%");
       changeRootVal("--result-checkmark-width", "30%");
       changeRootVal(
@@ -141,12 +156,19 @@ function checkCard(elm) {
       selectedInput = "checkbox";
       selectedStyle = "checkbox3";
       changeEditorTab();
+      checkmarkBg = "#313131";
+      checkmarkTransform = "translate(-50%, -50%) rotate(0deg)";
 
       isUseBackground.checked = true;
       useBackground = true;
       useBorder = false;
       isUseBorder.checked = false;
-      changebackground("#f8f8f8");
+      checkmarkTop = "50%";
+      borderRadius = "5%";
+      checkmarkThick = 0;
+      checkmarkSize.height = "70%";
+      checkmarkSize.width = "70%";
+      changebackground("#a2a2a2");
       changeCheckmark("#313131");
       changeRootVal("--result-border", "none");
       changeBaseColor("#ca3e47");
@@ -262,6 +284,10 @@ function changeBorder(color, thick) {
   borderThickness = thick;
   if (isUseBorder.checked) {
     border = `${borderThickness}px solid ${borderColor}`;
+    changeRootVal("--result-border", border);
+    changeCodeValue();
+  } else {
+    border = "none";
     changeRootVal("--result-border", border);
     changeCodeValue();
   }

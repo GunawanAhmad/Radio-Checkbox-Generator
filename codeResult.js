@@ -81,10 +81,10 @@ function checkboxCode() {
   let Html = `<label class="checkbox-container">
     Custom Checkbox
     <input type="checkbox" />
-    <span class="fake-checkbox"></span>
+    <span class="checkmark"></span>
   </label>`;
 
-  let Css = `checkbox-container {
+  let Css = `.checkbox-container {
     position: relative;
     padding-left: 25px;
     height: 20px;
@@ -94,46 +94,51 @@ function checkboxCode() {
     margin: 0.5rem 0;
   }
   
- 
   .checkbox-container input {
     opacity: 0;
   }
   
-  .checkbox-container .fake-checkbox {
+  .checkbox-container .checkmark {
     position: absolute;
     left: 0;
     top: -1px;
     height: 100%;
     width: 20px;
-    border: 1px solid var(--black);
+    border: ${border};
+    background : ${backgroundColor};
+    border-radius : ${borderRadius};
   }
   
- 
-  .checkbox-container .fake-checkbox::before {
+  .checkbox-container .checkmark::before {
     content: "";
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: ${checkmarkTop};
     transform: ${checkmarkTransform};
     height: 0px;
     width: 0px;
-    background-color: ${checkmarkBg};
     border: solid ${checkmarkBorderClr};
-    border-width: 0 ${checkmarkThick} ${checkmarkThick} 0;
+    border-width: 0 ${checkmarkThick}px ${checkmarkThick}px 0;
     transition: all 150ms ease;
     opacity: 0;
+    background-color : ${checkmarkBg};
   }
   
-  .checkbox-container input:checked ~ .fake-checkbox::before {
+  .checkbox-container input:checked ~ .checkmark::before {
     height: ${checkmarkSize.height};
     width: ${checkmarkSize.width};
     opacity: 1;
   }
   
-  .checkbox-container input:disabled ~ .fake-checkbox {
-    
-    opacity: ${opacityVal};
-  }`;
+  .checkbox-container input:disabled ~ .checkmark::before {
+    opacity: 0.7;
+  }
+
+  
+  .checkbox-container input:disabled ~ .checkmark {
+    opacity: 0.7;
+  }
+  `;
 
   return {
     Html,
