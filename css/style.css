@@ -24,11 +24,25 @@
   --result-checkmark-width: 30%;
 }
 
-.custom-input-base .radio-container, .card-base .radio-container, .main .style-section .radio-option .card-container .card .radio-container, .main .customize-section .result-section .result-container .result-card .radio-container, .main .customize-section .editor ul li .edit-tab .radio-container,
+.custom-input-base .radio-container,
+.card-base .radio-container,
+.main .style-section .radio-option .card-container .card .radio-container,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container,
+.main .customize-section .editor ul li .edit-tab .radio-container,
 .custom-input-base .checkbox-container,
 .card-base .checkbox-container,
 .main .style-section .radio-option .card-container .card .checkbox-container,
-.main .customize-section .result-section .result-container .result-card .checkbox-container,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container,
 .main .customize-section .editor ul li .edit-tab .checkbox-container {
   position: relative;
   padding-left: 50px;
@@ -42,31 +56,119 @@
   color: var(--white);
 }
 
-.custom-input-base .radio-container input, .card-base .radio-container input, .main .style-section .radio-option .card-container .card .radio-container input, .main .customize-section .result-section .result-container .result-card .radio-container input, .main .customize-section .editor ul li .edit-tab .radio-container input,
+.custom-input-base .radio-container input,
+.card-base .radio-container input,
+.main .style-section .radio-option .card-container .card .radio-container input,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container
+  input,
+.main .customize-section .editor ul li .edit-tab .radio-container input,
 .custom-input-base .checkbox-container input,
 .card-base .checkbox-container input,
-.main .style-section .radio-option .card-container .card .checkbox-container input,
-.main .customize-section .result-section .result-container .result-card .checkbox-container input,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .checkbox-container
+  input,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container
+  input,
 .main .customize-section .editor ul li .edit-tab .checkbox-container input {
   opacity: 0;
 }
 
-.custom-input-base .radio-container .fake-radio, .card-base .radio-container .fake-radio, .main .style-section .radio-option .card-container .card .radio-container .fake-radio, .main .customize-section .result-section .result-container .result-card .radio-container .fake-radio, .main .customize-section .editor ul li .edit-tab .radio-container .fake-radio,
+.custom-input-base .radio-container .fake-radio,
+.card-base .radio-container .fake-radio,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .radio-container
+  .fake-radio,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container
+  .fake-radio,
+.main .customize-section .editor ul li .edit-tab .radio-container .fake-radio,
 .custom-input-base .radio-container .checkmark,
 .card-base .radio-container .checkmark,
-.main .style-section .radio-option .card-container .card .radio-container .checkmark,
-.main .customize-section .result-section .result-container .result-card .radio-container .checkmark,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .radio-container
+  .checkmark,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container
+  .checkmark,
 .main .customize-section .editor ul li .edit-tab .radio-container .checkmark,
 .custom-input-base .checkbox-container .fake-radio,
 .card-base .checkbox-container .fake-radio,
-.main .style-section .radio-option .card-container .card .checkbox-container .fake-radio,
-.main .customize-section .result-section .result-container .result-card .checkbox-container .fake-radio,
-.main .customize-section .editor ul li .edit-tab .checkbox-container .fake-radio,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .checkbox-container
+  .fake-radio,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container
+  .fake-radio,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .checkbox-container
+  .fake-radio,
 .custom-input-base .checkbox-container .checkmark,
 .card-base .checkbox-container .checkmark,
-.main .style-section .radio-option .card-container .card .checkbox-container .checkmark,
-.main .customize-section .result-section .result-container .result-card .checkbox-container .checkmark,
-.main .customize-section .editor ul li .edit-tab .checkbox-container .checkmark {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .checkbox-container
+  .checkmark,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container
+  .checkmark,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .checkbox-container
+  .checkmark {
   position: absolute;
   left: 0;
   top: -1px;
@@ -76,12 +178,54 @@
   border-radius: 50%;
 }
 
-.custom-input-base .radio-container .fake-radio::before, .card-base .radio-container .fake-radio::before, .main .style-section .radio-option .card-container .card .radio-container .fake-radio::before, .main .customize-section .result-section .result-container .result-card .radio-container .fake-radio::before, .main .customize-section .editor ul li .edit-tab .radio-container .fake-radio::before,
+.custom-input-base .radio-container .fake-radio::before,
+.card-base .radio-container .fake-radio::before,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .radio-container
+  .fake-radio::before,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container
+  .fake-radio::before,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .radio-container
+  .fake-radio::before,
 .custom-input-base .checkbox-container .fake-radio::before,
 .card-base .checkbox-container .fake-radio::before,
-.main .style-section .radio-option .card-container .card .checkbox-container .fake-radio::before,
-.main .customize-section .result-section .result-container .result-card .checkbox-container .fake-radio::before,
-.main .customize-section .editor ul li .edit-tab .checkbox-container .fake-radio::before {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .checkbox-container
+  .fake-radio::before,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container
+  .fake-radio::before,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .checkbox-container
+  .fake-radio::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -96,57 +240,273 @@
   opacity: 0;
 }
 
-.custom-input-base .radio-container input:checked ~ .fake-radio::before, .card-base .radio-container input:checked ~ .fake-radio::before, .main .style-section .radio-option .card-container .card .radio-container input:checked ~ .fake-radio::before, .main .customize-section .result-section .result-container .result-card .radio-container input:checked ~ .fake-radio::before, .main .customize-section .editor ul li .edit-tab .radio-container input:checked ~ .fake-radio::before,
+.custom-input-base .radio-container input:checked ~ .fake-radio::before,
+.card-base .radio-container input:checked ~ .fake-radio::before,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .radio-container
+  input:checked
+  ~ .fake-radio::before,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container
+  input:checked
+  ~ .fake-radio::before,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .radio-container
+  input:checked
+  ~ .fake-radio::before,
 .custom-input-base .checkbox-container input:checked ~ .fake-radio::before,
 .card-base .checkbox-container input:checked ~ .fake-radio::before,
-.main .style-section .radio-option .card-container .card .checkbox-container input:checked ~ .fake-radio::before,
-.main .customize-section .result-section .result-container .result-card .checkbox-container input:checked ~ .fake-radio::before,
-.main .customize-section .editor ul li .edit-tab .checkbox-container input:checked ~ .fake-radio::before {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .checkbox-container
+  input:checked
+  ~ .fake-radio::before,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container
+  input:checked
+  ~ .fake-radio::before,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .checkbox-container
+  input:checked
+  ~ .fake-radio::before {
   height: 70%;
   width: 70%;
   opacity: 1;
 }
 
-.custom-input-base .radio-container input:disabled ~ .fake-radio::before, .card-base .radio-container input:disabled ~ .fake-radio::before, .main .style-section .radio-option .card-container .card .radio-container input:disabled ~ .fake-radio::before, .main .customize-section .result-section .result-container .result-card .radio-container input:disabled ~ .fake-radio::before, .main .customize-section .editor ul li .edit-tab .radio-container input:disabled ~ .fake-radio::before,
+.custom-input-base .radio-container input:disabled ~ .fake-radio::before,
+.card-base .radio-container input:disabled ~ .fake-radio::before,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .radio-container
+  input:disabled
+  ~ .fake-radio::before,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container
+  input:disabled
+  ~ .fake-radio::before,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .radio-container
+  input:disabled
+  ~ .fake-radio::before,
 .custom-input-base .checkbox-container input:disabled ~ .fake-radio::before,
 .card-base .checkbox-container input:disabled ~ .fake-radio::before,
-.main .style-section .radio-option .card-container .card .checkbox-container input:disabled ~ .fake-radio::before,
-.main .customize-section .result-section .result-container .result-card .checkbox-container input:disabled ~ .fake-radio::before,
-.main .customize-section .editor ul li .edit-tab .checkbox-container input:disabled ~ .fake-radio::before {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .checkbox-container
+  input:disabled
+  ~ .fake-radio::before,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container
+  input:disabled
+  ~ .fake-radio::before,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .checkbox-container
+  input:disabled
+  ~ .fake-radio::before {
   background-color: grey;
   opacity: 0.7;
 }
 
-.custom-input-base .radio-container input:disabled ~ .fake-radio, .card-base .radio-container input:disabled ~ .fake-radio, .main .style-section .radio-option .card-container .card .radio-container input:disabled ~ .fake-radio, .main .customize-section .result-section .result-container .result-card .radio-container input:disabled ~ .fake-radio, .main .customize-section .editor ul li .edit-tab .radio-container input:disabled ~ .fake-radio,
+.custom-input-base .radio-container input:disabled ~ .fake-radio,
+.card-base .radio-container input:disabled ~ .fake-radio,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .radio-container
+  input:disabled
+  ~ .fake-radio,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container
+  input:disabled
+  ~ .fake-radio,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .radio-container
+  input:disabled
+  ~ .fake-radio,
 .custom-input-base .checkbox-container input:disabled ~ .fake-radio,
 .card-base .checkbox-container input:disabled ~ .fake-radio,
-.main .style-section .radio-option .card-container .card .checkbox-container input:disabled ~ .fake-radio,
-.main .customize-section .result-section .result-container .result-card .checkbox-container input:disabled ~ .fake-radio,
-.main .customize-section .editor ul li .edit-tab .checkbox-container input:disabled ~ .fake-radio {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .checkbox-container
+  input:disabled
+  ~ .fake-radio,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container
+  input:disabled
+  ~ .fake-radio,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .checkbox-container
+  input:disabled
+  ~ .fake-radio {
   opacity: 0.7;
 }
 
-
 .custom-input-base .radio-container .checkmark,
 .card-base .radio-container .checkmark,
-.main .style-section .radio-option .card-container .card .radio-container .checkmark,
-.main .customize-section .result-section .result-container .result-card .radio-container .checkmark,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .radio-container
+  .checkmark,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container
+  .checkmark,
 .main .customize-section .editor ul li .edit-tab .radio-container .checkmark,
 .custom-input-base .checkbox-container .checkmark,
 .card-base .checkbox-container .checkmark,
-.main .style-section .radio-option .card-container .card .checkbox-container .checkmark,
-.main .customize-section .result-section .result-container .result-card .checkbox-container .checkmark,
-.main .customize-section .editor ul li .edit-tab .checkbox-container .checkmark {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .checkbox-container
+  .checkmark,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container
+  .checkmark,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .checkbox-container
+  .checkmark {
   border-radius: 2px;
   background-color: var(--white);
 }
 
-.custom-input-base .radio-container .checkmark::before, .card-base .radio-container .checkmark::before, .main .style-section .radio-option .card-container .card .radio-container .checkmark::before, .main .customize-section .result-section .result-container .result-card .radio-container .checkmark::before, .main .customize-section .editor ul li .edit-tab .radio-container .checkmark::before,
+.custom-input-base .radio-container .checkmark::before,
+.card-base .radio-container .checkmark::before,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .radio-container
+  .checkmark::before,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container
+  .checkmark::before,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .radio-container
+  .checkmark::before,
 .custom-input-base .checkbox-container .checkmark::before,
 .card-base .checkbox-container .checkmark::before,
-.main .style-section .radio-option .card-container .card .checkbox-container .checkmark::before,
-.main .customize-section .result-section .result-container .result-card .checkbox-container .checkmark::before,
-.main .customize-section .editor ul li .edit-tab .checkbox-container .checkmark::before {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .checkbox-container
+  .checkmark::before,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container
+  .checkmark::before,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .checkbox-container
+  .checkmark::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -162,18 +522,68 @@
   transition: height 150ms ease, width 150ms ease;
 }
 
-.custom-input-base .radio-container input:checked ~ .checkmark::before, .card-base .radio-container input:checked ~ .checkmark::before, .main .style-section .radio-option .card-container .card .radio-container input:checked ~ .checkmark::before, .main .customize-section .result-section .result-container .result-card .radio-container input:checked ~ .checkmark::before, .main .customize-section .editor ul li .edit-tab .radio-container input:checked ~ .checkmark::before,
+.custom-input-base .radio-container input:checked ~ .checkmark::before,
+.card-base .radio-container input:checked ~ .checkmark::before,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .radio-container
+  input:checked
+  ~ .checkmark::before,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container
+  input:checked
+  ~ .checkmark::before,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .radio-container
+  input:checked
+  ~ .checkmark::before,
 .custom-input-base .checkbox-container input:checked ~ .checkmark::before,
 .card-base .checkbox-container input:checked ~ .checkmark::before,
-.main .style-section .radio-option .card-container .card .checkbox-container input:checked ~ .checkmark::before,
-.main .customize-section .result-section .result-container .result-card .checkbox-container input:checked ~ .checkmark::before,
-.main .customize-section .editor ul li .edit-tab .checkbox-container input:checked ~ .checkmark::before {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .checkbox-container
+  input:checked
+  ~ .checkmark::before,
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container
+  input:checked
+  ~ .checkmark::before,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .checkbox-container
+  input:checked
+  ~ .checkmark::before {
   height: 50%;
   width: 30%;
   opacity: 1;
 }
 
-.card-base, .main .style-section .radio-option .card-container .card, .main .customize-section .result-section .result-container .result-card {
+.card-base,
+.main .style-section .radio-option .card-container .card,
+.main .customize-section .result-section .result-container .result-card {
   background-color: var(--light-black);
   max-width: 300px;
   min-height: 250px;
@@ -312,45 +722,147 @@ body {
   border: 5px solid var(--red);
 }
 
-.main .style-section .radio-option .card-container .card .input-section .radio-container.radio2 .fake-radio,
-.main .style-section .radio-option .card-container .card .input-section .checkbox-container.radio2 .fake-radio {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .radio-container.radio2
+  .fake-radio,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .checkbox-container.radio2
+  .fake-radio {
   border: none;
   background-color: var(--red);
 }
 
-.main .style-section .radio-option .card-container .card .input-section .radio-container.radio2 input:checked ~ .fake-radio::before,
-.main .style-section .radio-option .card-container .card .input-section .checkbox-container.radio2 input:checked ~ .fake-radio::before {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .radio-container.radio2
+  input:checked
+  ~ .fake-radio::before,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .checkbox-container.radio2
+  input:checked
+  ~ .fake-radio::before {
   width: 40%;
   height: 40%;
 }
 
-.main .style-section .radio-option .card-container .card .input-section .radio-container.radio3 .fake-radio,
-.main .style-section .radio-option .card-container .card .input-section .checkbox-container.radio3 .fake-radio {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .radio-container.radio3
+  .fake-radio,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .checkbox-container.radio3
+  .fake-radio {
   border: none;
   background-color: var(--white);
 }
 
-.main .style-section .radio-option .card-container .card .input-section .radio-container.radio3 .fake-radio::before,
-.main .style-section .radio-option .card-container .card .input-section .checkbox-container.radio3 .fake-radio::before {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .radio-container.radio3
+  .fake-radio::before,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .checkbox-container.radio3
+  .fake-radio::before {
   background-color: var(--red);
   bottom: 0px;
   transform: translate(-50%, 0);
   top: unset;
 }
 
-.main .style-section .radio-option .card-container .card .input-section .radio-container.radio3 input:checked ~ .fake-radio::before,
-.main .style-section .radio-option .card-container .card .input-section .checkbox-container.radio3 input:checked ~ .fake-radio::before {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .radio-container.radio3
+  input:checked
+  ~ .fake-radio::before,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .checkbox-container.radio3
+  input:checked
+  ~ .fake-radio::before {
   width: 80%;
   height: 80%;
 }
 
-.main .style-section .radio-option .card-container .card .input-section .radio-container.checkbox2 .checkmark,
-.main .style-section .radio-option .card-container .card .input-section .checkbox-container.checkbox2 .checkmark {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .radio-container.checkbox2
+  .checkmark,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .checkbox-container.checkbox2
+  .checkmark {
   border-radius: 50%;
 }
 
-.main .style-section .radio-option .card-container .card .input-section .radio-container.checkbox3 .checkmark::before,
-.main .style-section .radio-option .card-container .card .input-section .checkbox-container.checkbox3 .checkmark::before {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .radio-container.checkbox3
+  .checkmark::before,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .checkbox-container.checkbox3
+  .checkmark::before {
   top: 50%;
   background-color: var(--medium-black);
   transform: translate(-50%, -50%) rotate(0);
@@ -358,8 +870,24 @@ body {
   border-radius: 0px;
 }
 
-.main .style-section .radio-option .card-container .card .input-section .radio-container.checkbox3 input:checked ~ .checkmark::before,
-.main .style-section .radio-option .card-container .card .input-section .checkbox-container.checkbox3 input:checked ~ .checkmark::before {
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .radio-container.checkbox3
+  input:checked
+  ~ .checkmark::before,
+.main
+  .style-section
+  .radio-option
+  .card-container
+  .card
+  .input-section
+  .checkbox-container.checkbox3
+  input:checked
+  ~ .checkmark::before {
   width: 70%;
   height: 70%;
 }
@@ -405,20 +933,37 @@ body {
   max-width: 350px;
 }
 
-.main .customize-section .result-section .result-container .result-card .radio-container {
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container {
   height: 30px;
   font-size: 1rem;
   padding-left: 40px;
   color: black;
 }
 
-.main .customize-section .result-section .result-container .result-card .radio-container .fake-radio {
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container
+  .fake-radio {
   width: 30px;
   background-color: var(--result-background);
   border: var(--result-border);
 }
 
-.main .customize-section .result-section .result-container .result-card .radio-container .fake-radio::before {
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container
+  .fake-radio::before {
   background-color: var(--result-color);
   height: var(--result-radio-size) !important;
   width: var(--result-radio-size) !important;
@@ -427,43 +972,89 @@ body {
   bottom: var(--result-bottom);
 }
 
-.main .customize-section .result-section .result-container .result-card .radio-container input:disabled ~ .fake-radio {
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container
+  input:disabled
+  ~ .fake-radio {
   opacity: var(--result-disabled-opacity);
   background-color: var(--result-background);
 }
 
-.main .customize-section .result-section .result-container .result-card .radio-container input:disabled ~ .fake-radio::before {
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .radio-container
+  input:disabled
+  ~ .fake-radio::before {
   background-color: var(--result-color);
 }
 
-.main .customize-section .result-section .result-container .result-card .checkbox-container {
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container {
   height: 30px;
   font-size: 1rem;
   padding-left: 40px;
   color: black;
 }
 
-.main .customize-section .result-section .result-container .result-card .checkbox-container .checkmark {
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container
+  .checkmark {
   width: 30px;
   background-color: var(--result-background);
   border: var(--result-border);
   border-radius: var(--result-border-radius);
 }
 
-.main .customize-section .result-section .result-container .result-card .checkbox-container .checkmark::before {
-  border-width: 0px var(--result-checkmark-thick) var(--result-checkmark-thick) 0px;
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container
+  .checkmark::before {
+  border-width: 0px var(--result-checkmark-thick) var(--result-checkmark-thick)
+    0px;
   background-color: var(--result-checkmark-background);
   border-color: var(--result-checkmark-color);
   transform: var(--result-checkmark-transform);
   top: var(--result-top);
 }
 
-.main .customize-section .result-section .result-container .result-card .checkbox-container input:disabled ~ .checkmark {
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container
+  input:disabled
+  ~ .checkmark {
   opacity: var(--result-disabled-opacity);
   background-color: var(--result-background);
 }
 
-.main .customize-section .result-section .result-container .result-card .checkbox-container input:checked ~ .checkmark::before {
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .result-card
+  .checkbox-container
+  input:checked
+  ~ .checkmark::before {
   height: var(--result-checkmark-height);
   width: var(--result-checkmark-width);
 }
@@ -481,12 +1072,23 @@ body {
   font-weight: 500;
 }
 
-.main .customize-section .result-section .result-container .to-code-action .icon {
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .to-code-action
+  .icon {
   height: 50px;
   width: 50px;
 }
 
-.main .customize-section .result-section .result-container .to-code-action .icon svg {
+.main
+  .customize-section
+  .result-section
+  .result-container
+  .to-code-action
+  .icon
+  svg {
   height: 100%;
   width: 100%;
 }
@@ -553,7 +1155,14 @@ body {
   margin-bottom: 1rem;
 }
 
-.main .customize-section .editor ul li .edit-tab .checkbox-container .checkmark {
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .checkbox-container
+  .checkmark {
   width: 20px;
   background-color: var(--gray);
   border: var(--gray);
@@ -572,7 +1181,14 @@ body {
   height: 100%;
 }
 
-.main .customize-section .editor ul li .edit-tab .input-tab input[type="color"] {
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .input-tab
+  input[type="color"] {
   border: 4px solid var(--gray);
   margin-right: 1rem;
   width: 100px;
@@ -605,7 +1221,22 @@ body {
   outline: none;
 }
 
-.main .customize-section .editor ul li .edit-tab .range-input input::-moz-range-thumb, .main .customize-section .editor ul li .edit-tab .range-input input::-webkit-slider-thumb {
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .range-input
+  input::-moz-range-thumb,
+.main
+  .customize-section
+  .editor
+  ul
+  li
+  .edit-tab
+  .range-input
+  input::-webkit-slider-thumb {
   appearance: none;
   width: 25px;
   height: 25px;
@@ -623,7 +1254,7 @@ body {
 
 .main .customize-section .editor ul li .edit-tab .range-input .val-container p {
   position: absolute;
-  left: 0%;
+  left: 50%;
   margin-top: 1rem;
   color: var(--white);
 }
