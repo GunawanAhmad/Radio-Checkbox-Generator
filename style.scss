@@ -682,3 +682,57 @@ body {
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    padding: 1rem;
+    .nav {
+      .nav-list {
+        justify-content: space-between;
+        li {
+          margin-left: 0rem;
+        }
+      }
+    }
+    .main {
+      .home {
+        .top {
+          justify-content: center;
+
+          .main-text h1 {
+            font-size: 2rem;
+          }
+          .img {
+            display: none;
+          }
+        }
+      }
+
+      .style-section {
+        .card-container {
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .customize-section {
+      .result-section {
+        display: block;
+
+        .result-container {
+          position: relative;
+          margin: auto;
+          .result-card {
+            position: relative;
+            margin: auto;
+          }
+        }
+
+        .editor {
+          margin-top: 5rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "workbench.colorTheme": "Material Theme Darker",
+  "workbench.iconTheme": "material-icon-theme",
+  "window.zoomLevel": 0,
+  "typescript.tsdk": "",
+  "editor.minimap.enabled": false,
+  "liveSassCompile.settings.formats": [
+    {
+      "extensionName": ".css",
+      "savePath": "css"
+    }
+  ],
+  "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.autoprefix": [],
+  "stories.username": "Guernsey_purple",
+  "editor.suggestSelection": "first",
+  "editor.fontFamily": "Cascadia Code, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.cursorBlinking": "expand",
+  "editor.formatOnSave": true,
+  "terminal.integrated.rendererType": "dom",
+  "workbench.colorCustomizations": {
+    "activityBarBadge.background": "#FF8A00",
+    "activityBar.activeBorder": "#FF8A00"
+  },
+  "java.configuration.checkProjectSettingsExclusions": false,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wrappingIndent": "same",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "git.confirmSync": false,
+  "python.languageServer": "Microsoft",
+  "liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"]
+  // "editor.wordWrapColumn": n
+}
