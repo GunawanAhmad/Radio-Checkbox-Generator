@@ -86,7 +86,7 @@ function checkboxCode() {
 
   let Css = `.checkbox-container {
     position: relative;
-    padding-left: 25px;
+    padding-left: 30px;
     height: 20px;
     display: flex;
     align-items: center;

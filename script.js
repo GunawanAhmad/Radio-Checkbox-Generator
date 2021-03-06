@@ -48,6 +48,7 @@ function checkCard(elm) {
 
       break;
     case cls.contains("radio2"):
+      changeResultType("radio", "radio2");
       selectedInput = "radio";
       selectedStyle = "radio2";
       changeEditorTab();
@@ -57,7 +58,7 @@ function checkCard(elm) {
       isUseBackground.checked = true;
       useBorder = false;
       radioSize = "40%";
-      changeBorder("313131");
+      changeBorder("313131", 1);
       changebackground("#ca3e47");
       changeBaseColor("#f8f8f8");
       changeRootVal("--result-border", "none");
@@ -66,6 +67,7 @@ function checkCard(elm) {
 
       break;
     case cls.contains("radio3"):
+      changeResultType("radio", "radio3");
       selectedInput = "radio";
       selectedStyle = "radio3";
       changeEditorTab();
@@ -207,10 +209,12 @@ function changeBaseColor(color) {
   baseColor = color;
   baseColorInput.value = color;
   baseColorInputHex.value = color;
+  console.log(baseColor);
   changeRootVal("--result-color", baseColor);
   if (useBorder) {
-    changeRootVal("--result-border", baseColor);
+    changeBorder(baseColor, borderThickness);
   }
+  changeCodeValue();
 }
 
 //background color;
@@ -273,6 +277,7 @@ isUseBorder.addEventListener("click", () => {
     changeRootVal("--result-border", border);
     changeBorder(borderColorInput.value, borderThickness);
   } else {
+    changeBorder(borderColorInput.value, borderThickness);
     changeRootVal("--result-border", "none");
   }
 });
@@ -368,22 +373,24 @@ function changeResultType(type, className) {
 //checkmark
 
 function changeCheckmark(val) {
+  checkmarkColorInput.value = val;
+  checkmarkColorInputHex.value = val;
+  checkmarkColor = val;
+  checkmarkBorderClr = val;
   if (selectedStyle === "checkbox3") {
-    changeRootVal("--result-checkmark-background", val);
+    changeRootVal("--result-checkmark-background", checkmarkColor);
+    checkmarkBg = val;
   } else {
-    checkmarkColorInput.value = val;
-    checkmarkColorInputHex.value = val;
-    checkmarkColor = val;
-    checkmarkBorderClr = val;
-
-    changeRootVal("--result-checkmark-color", val);
+    changeRootVal("--result-checkmark-color", checkmarkColor);
   }
+  changeCodeValue();
 }
 
 function changeCheckmarkThickness(val) {
-  checkmarkThick = val + "px";
+  checkmarkThick = val;
   checkmarkThickInput.value = val;
   changeRootVal("--result-checkmark-thick", val);
+  changeCodeValue();
 }
 
 checkmarkThickInput.addEventListener("change", (e) => {
